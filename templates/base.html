@@ -108,6 +108,11 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+        <div class="row text-center">
+            <div class="col">
+                <p class="my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</p>                
+            </div>            
+        </div>
     </header>
 
     {% if messages %}

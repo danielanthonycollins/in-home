@@ -4,6 +4,26 @@ body {
     font-family: 'Outfit', Helvetica, sans-serif;
 }
 
+.page-heading {
+    margin-top: 1.3rem !important;
+    margin-bottom: 1.5rem !important;
+    text-transform: uppercase;
+}
+
+.home-background {
+    background: url(../../media/pexels-almapapi-2396108.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.home-text-background {
+    background-color: rgba(65, 90, 119, 0.8);
+    border-radius: 1rem;
+    padding: 1rem 1.3rem;
+}
+
 #main-nav {
     background-color: #415A77;
     --bs-navbar-color: #fff;

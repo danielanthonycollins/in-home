@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-lg-2">
         <div class="col mb-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=cooking,kettles,cutlery">
                 <div class="category-box">
                     <div class="category-image" style="background-image: url('../../../media/pexels-heyho-6301168.jpg');"></div>
                     <button class="btn btn-lg btn-primary category-button">Shop Kitchen</button>
@@ -24,7 +24,7 @@
             </a>
         </div>
         <div class="col mb-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=chairs,televisions,tables">
                 <div class="category-box">
                     <div class="category-image" style="background-image: url('../../../media/pexels-heyho-6316067.jpg');"></div>
                     <button class="btn btn-lg btn-primary category-button">Shop Living Room</button>
@@ -34,7 +34,7 @@
     </div>
     <div class="row row-cols-1 row-cols-lg-2">
         <div class="col mb-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=sheets,wardrobes,pillows">
                 <div class="category-box">
                     <div class="category-image" style="background-image: url('../../../media/pexels-naimbic-2029698.jpg');"></div>
                     <button class="btn btn-lg btn-primary category-button">Shop Bedroom</button>
@@ -42,7 +42,7 @@
             </a>
         </div>
         <div class="col mb-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=towels,mirrors,accessories">
                 <div class="category-box">
                     <div class="category-image" style="background-image: url('../../../media/pexels-julieaagaard-2207894.jpg');"></div>
                     <button class="btn btn-lg btn-primary category-button">Shop Bathroom</button>

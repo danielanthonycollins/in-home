@@ -8,13 +8,13 @@
                 </div>
                 <a class="footer-quick-link" href="{% url 'products' %}">All Products</a>
                 <br>
-                <a class="footer-quick-link" href="">Kitchen</a>
+                <a class="footer-quick-link" href="{% url 'products' %}?category=cooking,kettles,cutlery">Kitchen</a>
                 <br>
-                <a class="footer-quick-link" href="">Living Room</a>
+                <a class="footer-quick-link" href="{% url 'products' %}?category=chairs,televisions,tables">Living Room</a>
                 <br>
-                <a class="footer-quick-link" href="">Bedroom</a>
+                <a class="footer-quick-link" href="{% url 'products' %}?category=sheets,wardrobes,pillows">Bedroom</a>
                 <br>
-                <a class="footer-quick-link" href="">Bathroom</a>
+                <a class="footer-quick-link" href="{% url 'products' %}?category=towels,mirrors,accessories">Bathroom</a>
             </div>
             <div class="col-12 col-md-4">
                 <p class="footer-heading mt-md-0 mt-4">Contact Us</p>

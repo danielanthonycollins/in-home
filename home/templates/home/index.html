@@ -8,8 +8,47 @@
             <h1 class="display-5 fw-bold text-uppercase home-background-text-shadow">Welcome!</h1>
             <p class="fs-4 home-background-text-shadow">Looking to spice up your home? Perhaps a new kettle for
                 the kitchen, or a towel set for the bathroom? We have everything you need right here!</p>
-        <a href="{% url 'products' %}" class="btn btn-primary btn-lg text-uppercase mt-1" type="button">Shop Now</a>
+            <a href="{% url 'products' %}" class="btn btn-primary btn-lg text-uppercase mt-1" type="button">Shop Now</a>
+        </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col mb-4">
+            <a href="#">
+                <div class="category-box">
+                    <div class="category-image" style="background-image: url('../../../media/pexels-heyho-6301168.jpg');"></div>
+                    <button class="btn btn-lg btn-primary category-button">Shop Kitchen</button>
+                </div>
+            </a>
+        </div>
+        <div class="col mb-4">
+            <a href="#">
+                <div class="category-box">
+                    <div class="category-image" style="background-image: url('../../../media/pexels-heyho-6316067.jpg');"></div>
+                    <button class="btn btn-lg btn-primary category-button">Shop Living Room</button>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col mb-4">
+            <a href="#">
+                <div class="category-box">
+                    <div class="category-image" style="background-image: url('../../../media/pexels-naimbic-2029698.jpg');"></div>
+                    <button class="btn btn-lg btn-primary category-button">Shop Bedroom</button>
+                </div>
+            </a>
+        </div>
+        <div class="col mb-4">
+            <a href="#">
+                <div class="category-box">
+                    <div class="category-image" style="background-image: url('../../../media/pexels-julieaagaard-2207894.jpg');"></div>
+                    <button class="btn btn-lg btn-primary category-button">Shop Bathroom</button>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}

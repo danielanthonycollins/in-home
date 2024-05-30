@@ -65,13 +65,13 @@
               {% if product.category %}
               <br>
                   {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
-                  <i class="fa-solid fa-utensils"></i> Kitchen
+                  <i class="fa-solid fa-utensils"></i> {{ product.category.friendly_name }}
                   {% elif product.category.name|in_category:"chairs,televisions,tables" %}
-                  <i class="fa-solid fa-couch"></i> Living Room
+                  <i class="fa-solid fa-couch"></i> {{ product.category.friendly_name }}
                   {% elif product.category.name|in_category:"sheets,wardrobes,pillows" %}
-                  <i class="fa-solid fa-bed"></i> Bedroom
+                  <i class="fa-solid fa-bed"></i> {{ product.category.friendly_name }}
                   {% elif product.category.name|in_category:"towels,mirrors,accessories" %}
-                  <i class="fa-solid fa-bath"></i> Bathroom
+                  <i class="fa-solid fa-bath"></i> {{ product.category.friendly_name }}
                   {% endif %}
               {% endif %}
           </p>

@@ -34,6 +34,19 @@ body {
     --bs-btn-active-border-color: #0D1B2A;
 }
 
+.to-top-button {
+    height: 42px;
+    width: 120px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+}
+
+.btt-link {
+    text-decoration: none;
+    color: #fff;
+}
+
 .home-text-background {
     background-color: rgba(65, 90, 119, 0.8);
     border-radius: 1rem;

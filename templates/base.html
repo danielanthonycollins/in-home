@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{% url '/media/inhomefavicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% media 'inhomefavicon.png' %}">
     {% endblock %}
 
     {% block extra_meta %}
@@ -62,7 +62,7 @@
             </div>
             <div class="col-12 col-lg-4 my-auto text-lg-center">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <img src="{% url '/media/inhomelogo.png' %}" alt="Inhome Logo" class="logo">
+                    <img src="{% media 'inhomelogo.png' %}" alt="Inhome Logo" class="logo">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto">

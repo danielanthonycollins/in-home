@@ -143,6 +143,22 @@ body {
     border: 1px solid #dee2e6;
 }
 
+.kitchen-category {
+    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-heyho-6301168.jpg');
+}
+
+.living-room-category {
+    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-heyho-6316067.jpg');
+}
+
+.bedroom-category {
+    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-naimbic-2029698.jpg');
+}
+
+.bathroom-category {
+    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-julieaagaard-2207894.jpg');
+}
+
 .category-button {
     position: absolute;
     bottom: 1.8rem;

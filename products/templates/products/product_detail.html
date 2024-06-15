@@ -28,26 +28,25 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                <p>
+                <p class="mb-0 heading-3">{{ product.name }}</p>
+                <p class="mb-3 heading-5">£{{ product.price }}</p>
+                <p class="mb-3">
                     {% if product.category %}
-                    <br>
                     {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
-                    <i class="fa-solid fa-utensils"></i> Kitchen
+                    <i class="fa-solid fa-utensils me-1 category-icon"></i>Kitchen
                     {% elif product.category.name|in_category:"chairs,televisions,tables" %}
-                    <i class="fa-solid fa-couch"></i> Living Room
+                    <i class="fa-solid fa-couch me-1 category-icon"></i>Living Room
                     {% elif product.category.name|in_category:"sheets,wardrobes,pillows" %}
-                    <i class="fa-solid fa-bed"></i> Bedroom
+                    <i class="fa-solid fa-bed me-1 category-icon"></i>Bedroom
                     {% elif product.category.name|in_category:"towels,mirrors,accessories" %}
-                    <i class="fa-solid fa-bath"></i> Bathroom
+                    <i class="fa-solid fa-bath me-1 category-icon"></i>Bathroom
                     {% endif %}
                     {% endif %}
                 </p>
                 {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                <p><i class="fas fa-star me-1 rating-star"></i>{{ product.rating }} / 5</p>
                 {% else %}
-                <small class="text-muted">No Rating</small>
+                <p>No Rating</p>
                 {% endif %}
                 <p class="mt-3">{{ product.description }}</p>
                 {% if request.user.is_superuser %}

@@ -103,6 +103,10 @@ p {
     --bs-navbar-active-color: #d5d5d5;
 }
 
+.search-bar {
+    --bs-border-radius: 0;
+}
+
 #free-delivery-banner {
     background-color: #0D1B2A;
     color: #fff;
@@ -138,17 +142,13 @@ p {
 }
 
 .logo {
-    width: 13rem;
+    width: 11rem;
     height: auto;
 }
 
 .logo-small {
     width: 10rem;
     height: auto;
-}
-
-#topnav {
-    margin-bottom: 0.7rem;
 }
 
 .footer {

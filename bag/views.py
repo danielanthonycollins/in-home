@@ -19,6 +19,14 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
+    # Validate quantity
+    if quantity > 99:
+        quantity = 99
+        messages.warning(request, f"Quantity for {product.name} has been set to the maximum allowed value of 99.")
+    elif quantity < 1:
+        quantity = 1
+        messages.warning(request, f"Quantity for {product.name} has been set to the minimum allowed value of 1.")
+
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
@@ -36,6 +44,14 @@ def adjust_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
+
+    # Validate quantity
+    if quantity > 99:
+        quantity = 99
+        messages.warning(request, f"Quantity for {product.name} has been set to the maximum allowed value of 99.")
+    elif quantity < 1:
+        quantity = 1
+        messages.warning(request, f"Quantity for {product.name} has been set to the minimum allowed value of 1.")
 
     if quantity > 0:
         bag[item_id] = quantity

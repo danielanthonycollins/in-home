@@ -369,7 +369,7 @@ p {
         align-items: center;
     }
     .list-inline-item:not(:last-child) {
-        margin-right: 0.25rem;
+        margin-right: 0;
     }
     ul {
         padding-left: 0.2rem;

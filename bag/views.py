@@ -20,17 +20,22 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     # Validate quantity
-    if quantity > 99:
-        quantity = 99
-        messages.warning(request, f"Quantity for {product.name} has been set to the maximum allowed value of 99.")
-    elif quantity < 1:
-        quantity = 1
-        messages.warning(request, f"Quantity for {product.name} has been set to the minimum allowed value of 1.")
-
     if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        current_quantity = bag[item_id]
+        new_quantity = current_quantity + quantity
+        if new_quantity > 99:
+            bag[item_id] = 99
+            messages.warning(request, f"Quantity for {product.name} has been set to the maximum allowed value of 99.")
+        else:
+            bag[item_id] = new_quantity
+            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
+        if quantity > 99:
+            quantity = 99
+            messages.warning(request, f"Quantity for {product.name} has been set to the maximum allowed value of 99.")
+        elif quantity < 1:
+            quantity = 1
+            messages.warning(request, f"Quantity for {product.name} has been set to the minimum allowed value of 1.")
         bag[item_id] = quantity
         messages.success(request, f'Added {product.name} to your bag')
 

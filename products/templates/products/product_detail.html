@@ -63,16 +63,20 @@
                             <div class="w-50">
                                 <div class="input-group input-group-{{ product.id }}">
                                     <div class="input-group-text">
-                                        <button class="decrement-qty btn btn-primary rounded-0 decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                                        <button
+                                            class="decrement-qty btn btn-primary rounded-0 decrement-qty_{{ product.id }}"
+                                            data-item_id="{{ product.id }}">
                                             <span>
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
                                     </div>
-                                    <input class="form-control qty_input id_qty_{{ product.id }}" type="number" name="quantity" value="1"
-                                        min="1" max="99" data-item_id="{{ product.id }}">
+                                    <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
                                     <div class="input-group-text">
-                                        <button class="increment-qty btn btn-primary rounded-0 increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                                        <button
+                                            class="increment-qty btn btn-primary rounded-0 increment-qty_{{ product.id }}"
+                                            data-item_id="{{ product.id }}">
                                             <span>
                                                 <i class="fas fa-plus"></i>
                                             </span>
@@ -99,53 +103,80 @@
     </div>
 
     <div class="row">
-        <div class="col">
-            <p class="text-center heading-3">Reviews</p>
+        <div class="col-md-10 mx-auto">
+            <p class="heading-4 text-uppercase">Product Reviews</p>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-md-10 mx-auto">
             {% if request.user.is_authenticated %}
-                <form method="POST" action=".">
-                    {% csrf_token %}
-                    <div>
-                        <label for="review" class="form-label">Your Review</label>
-                        <textarea name="details" class="form-control" placeholder="What did you think of this product?" id="review" rows="5" required></textarea>
-                    </div>
-                    <div>
-                        <label for="rating">Rating</label>
-                        <select name="rating" class="form-select" id="rating" aria-label="Choose Rating" required>
-                            <option value="" disabled selected>Please choose a rating...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+            <form method="POST" action=".">
+                {% csrf_token %}
+                <div>
+                    <label for="review" class="form-label mb-2">What did you think about this product?</label>
+                    <textarea name="details" class="form-control" placeholder="Enter your feedback here..."
+                        id="review" rows="5" required></textarea>
+                </div>
+                <div>
+                    <label for="rating" class="form-label my-2">Please rate this product</label>
+                    <select name="rating" class="form-select mb-3" id="rating" aria-label="Choose Rating" required>
+                        <option value="" disabled selected>Please choose a rating...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn btn-primary mb-1" type="submit">Submit</button>
+                </div>
+                <div>
+                    <p class="review-muted-text"><em>* Already reviewed this product? Submitting a new review will update your existing one.</em></p>
+                </div>
+            </form>
             {% else %}
-                <p class="text-center heading-6">Please <a href="{% url 'account_login' %}" class="text-decoration-none">login</a> or <a href="{% url 'account_signup' %}" class="text-decoration-none">register</a> to post a review.</p>
+            <p class="heading-6"><em>Please <a href="{% url 'account_login' %}"
+                        class="text-decoration-none">login</a> or <a href="{% url 'account_signup' %}"
+                        class="text-decoration-none">register</a> to post your own review.</em></p>
             {% endif %}
         </div>
-        {% if product.reviews.all %}
-            {% for review in product.reviews.all %}
-                <div class="col">
-                    Review: {{ review.details }} <br>
-                    Rating: {{ review.rating }}/5 <br>
-                    Review by: {{ review.submitted_by }} <br>
-                    Date: {{ review.date_submitted|date:"d-m-Y" }}
-                </div>
-            {% endfor %}
-        {% else %}
-            <div class="col">
-                <p>No reviews have been submitted for this product yet.</p>
-            </div>
-        {% endif %}
     </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            {% if reviews %}
+            <div class="accordion" id="reviews-accordion">
+                {% for review in reviews %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ review.id }}" aria-expanded="true" aria-controls="collapse{{ review.id }}">
+                            <div><strong>{{ review.rating }} star</strong> review submitted by <strong>{{ review.submitted_by }}</strong>...</div>
+                        </button>
+                    </h2>
+                    <div id="collapse{{ review.id }}" class="accordion-collapse collapse" data-bs-parent="#reviews-accordion">
+                        <div class="accordion-body">
+                            <p>Review: {{ review.details }}</p>
+                            <p>Date submitted: {{ review.date_submitted|date:"d-m-Y" }}</p>
+                            {% if review.submitted_by == request.user or request.user.is_superuser %}
+                            <form method="post" action="{% url 'product_detail' product.id %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="review_id" value="{{ review.id }}">
+                                <input type="hidden" name="delete_review" value="true">
+                                <button type="submit" class="btn btn-danger">Delete Review</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No reviews have been submitted for this product yet.</p>
+            {% endif %}
+        </div>
+    </div>
+    
 </div>
 {% endblock %}
 

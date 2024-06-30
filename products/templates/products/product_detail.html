@@ -99,7 +99,11 @@
     </div>
 
     <div class="row">
-        <p class="text-center">Reviews</p>
+        <div class="col">
+            <p class="text-center heading-3">Reviews</p>
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             {% if request.user.is_authenticated %}
                 <form method="POST" action=".">
@@ -123,6 +127,8 @@
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </div>
                 </form>
+            {% else %}
+                <p class="text-center heading-6">Please <a href="{% url 'account_login' %}" class="text-decoration-none">login</a> or <a href="{% url 'account_signup' %}" class="text-decoration-none">register</a> to post a review.</p>
             {% endif %}
         </div>
         {% if product.reviews.all %}

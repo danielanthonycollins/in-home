@@ -81,13 +81,17 @@ def handle_review_submission(request, product):
     if details:
         review, created = Review.objects.get_or_create(
             product=product,
-            submitted_by=request.user
+            submitted_by=request.user,
+            defaults={'rating': rating, 'details': details}
         )
 
-        if not created:
+        if created:
+            messages.success(request, 'Your review was successfully created.')
+        else:
             review.rating = rating
             review.details = details
             review.save()
+            messages.info(request, 'Your existing review has been updated.')
 
     return redirect(reverse('product_detail', args=[product.id]))
 

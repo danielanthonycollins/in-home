@@ -4,10 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Review
 from .forms import ProductForm
-
-# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -64,11 +62,34 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    if request.method == 'POST':
+        handle_review_submission(request, product)
+
+    reviews = Review.objects.filter(product=product)
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def handle_review_submission(request, product):
+    details = request.POST.get('details')
+    rating = request.POST.get('rating')
+
+    if details:
+        review, created = Review.objects.get_or_create(
+            product=product,
+            submitted_by=request.user
+        )
+
+        if not created:
+            review.rating = rating
+            review.details = details
+            review.save()
+
+    return redirect(reverse('product_detail', args=[product.id]))
 
 
 @login_required

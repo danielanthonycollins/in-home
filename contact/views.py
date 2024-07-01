@@ -18,7 +18,7 @@ def contact(request):
 
             messages.success(request, 'Thank you! Your enquiry has been submitted successfully!')
             send_mail(subject, body_string, 'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
-            return render(request, 'contact/contact.html')
+            return render(request, 'home/index.html')
 
     form = ContactForm()
     return render(request, 'contact/contact.html', {'form':form})

@@ -277,6 +277,11 @@ p {
     overflow: visible;
 }
 
+.free-delivery-toast {
+    background-color: #415A77;
+    color: #fff;
+}
+
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;

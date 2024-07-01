@@ -14,9 +14,10 @@ def contact(request):
                 'subject': form.cleaned_data['subject'],
                 'enquiry': form.cleaned_data['enquiry'],
             }
+            body_string = '\n'.join([f"{key}: {value}" for key, value in body.items()])
 
             messages.success(request, 'Thank you! Your enquiry has been submitted successfully!')
-            send_mail(subject, body, 'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
+            send_mail(subject, body_string, 'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
             return render(request, 'contact/contact.html')
 
     form = ContactForm()

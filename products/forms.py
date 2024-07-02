@@ -17,3 +17,9 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
+
+        for field in self.fields:
+            if field == 'description':
+                self.fields[field].widget.attrs['class'] = 'extra-form-label-styling-tall'
+            else:
+                self.fields[field].widget.attrs['class'] = 'extra-form-label-styling'

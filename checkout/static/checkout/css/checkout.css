@@ -1,7 +1,7 @@
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
-  height: 40px;
+  height: 45px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 0px;
@@ -33,7 +33,7 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid #0c1b2a;
 }
 
 select,

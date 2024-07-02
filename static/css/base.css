@@ -94,6 +94,13 @@ p {
     padding: 0rem;
 }
 
+.dropdown-menu {
+    --bs-dropdown-link-active-color: #000;
+    --bs-dropdown-link-active-bg: #fff;
+    --bs-dropdown-link-disabled-color: #000;
+    --bs-dropdown-border-radius: 0;
+}
+
 .to-top-button {
     height: 42px;
     width: 120px;

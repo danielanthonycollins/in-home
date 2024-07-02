@@ -121,7 +121,20 @@ p {
 }
 
 .search-bar {
-    --bs-border-radius: 0;
+    color: #000;
+    border: 1px solid #0c1b2a;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
+    font-size: 0.9rem;
+}
+
+.search-bar:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #0c1b2a;
 }
 
 #free-delivery-banner {
@@ -429,4 +442,42 @@ p {
     .message-container {
         width: 91vw;
     }
+}
+
+.extra-form-label-styling {
+    color: #000;
+    border: 1px solid #0c1b2a;
+    height: 45px;
+    padding: 10px 12px;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
+    margin-bottom: 0.8rem;
+}
+
+.extra-form-label-styling:focus,
+.extra-form-label-styling-tall:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #0c1b2a;
+}
+
+.extra-form-label-styling-tall {
+    color: #000;
+    border: 1px solid #0c1b2a;
+    height: 120px;
+    padding: 10px 12px;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
+    margin-bottom: 0.8rem;
+}
+
+.contact-info {
+    color: #000 !important;
+}
+
+.contact-links {
+    text-decoration: none !important;
+    color: #000 !important;
 }

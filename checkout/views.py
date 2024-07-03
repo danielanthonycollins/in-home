@@ -16,6 +16,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    # Saves additional metadata to the payment intent
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -25,6 +26,7 @@ def cache_checkout_data(request):
             'username': request.user,
         })
         return HttpResponse(status=200)
+    # Handles error
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
@@ -32,6 +34,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    # Sets Stripe keys
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -50,12 +53,16 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+
+        # Handles valid form submission
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
+            # Create line items
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -73,18 +80,27 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
+            # Saves user preference to session if 'save-info' is in the POST data
             request.session['save_info'] = 'save-info' in request.POST
+
+            # Redirect user to checkout success page
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
+        # Handles GET method
         bag = request.session.get('bag', {})
+
+        # Stops user from navigating to checkout with no items in bag
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
+        # Get current bag contents from session
         current_bag = bag_contents(request)
+
+        # Handle Stripe payment amounts for payment intent
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -159,6 +175,7 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
+    # Delete the bag from session
     if 'bag' in request.session:
         del request.session['bag']
 

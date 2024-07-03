@@ -20,13 +20,16 @@ class StripeWH_Handler:
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
+        # Render email subject template
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
+        # Render email body template
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
         
+        # Send the email
         send_mail(
             subject,
             body,
@@ -38,6 +41,7 @@ class StripeWH_Handler:
         """
         Handle a generic/unknown/unexpected webhook event
         """
+        # Response for unhandled events
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
@@ -51,7 +55,7 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        # Get the Charge object
+        # Retrieve the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
@@ -60,7 +64,7 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2) # updated
 
-        # Clean data in the shipping details
+        # Clean shipping data
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
@@ -84,6 +88,7 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
+                # Tries to find an existing order matching the payment details
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
@@ -101,9 +106,11 @@ class StripeWH_Handler:
                 order_exists = True
                 break
             except Order.DoesNotExist:
+                # Wait and try again
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            # Send confirmation email
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
@@ -111,6 +118,7 @@ class StripeWH_Handler:
         else:
             order = None
             try:
+                # Create a new order if none exists
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     user_profile=profile,
@@ -125,6 +133,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
+                # Create order line items
                 for item_id, item_data in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
@@ -134,11 +143,13 @@ class StripeWH_Handler:
                     )
                     order_line_item.save()
             except Exception as e:
+                # If an error occurs, delete the order and return error response
                 if order:
                     order.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        # Send confirmation email after creating order
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
@@ -148,6 +159,7 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.payment_failed webhook from Stripe
         """
+        # Return a response for failed payments
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)

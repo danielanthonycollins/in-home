@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Home hero section with welcome message -->
 <div class="p-5 mb-4 home-background">
     <div class="container-fluid py-5">
         <div class="home-text-background container col-md-8">
@@ -13,8 +14,10 @@
     </div>
 </div>
 
+<!-- Categories container -->
 <div class="container">
     <div class="row row-cols-1 row-cols-lg-2">
+        <!-- Shop Kitchen category -->
         <div class="col mb-4">
             <a href="{% url 'products' %}?category=cooking,kettles,cutlery">
                 <div class="category-box">
@@ -23,6 +26,7 @@
                 </div>
             </a>
         </div>
+        <!-- Shop Living Room category -->
         <div class="col mb-4">
             <a href="{% url 'products' %}?category=chairs,televisions,tables">
                 <div class="category-box">
@@ -33,6 +37,7 @@
         </div>
     </div>
     <div class="row row-cols-1 row-cols-lg-2">
+        <!-- Shop Bedroom category -->
         <div class="col mb-4">
             <a href="{% url 'products' %}?category=sheets,wardrobes,pillows">
                 <div class="category-box">
@@ -41,6 +46,7 @@
                 </div>
             </a>
         </div>
+        <!-- Shop Bathroom category -->
         <div class="col mb-4">
             <a href="{% url 'products' %}?category=towels,mirrors,accessories">
                 <div class="category-box">

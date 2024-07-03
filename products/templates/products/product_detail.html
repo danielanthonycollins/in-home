@@ -3,8 +3,10 @@
 {% load custom_filters %}
 
 {% block content %}
+<!-- Product detail container -->
 <div class="container">
     <div class="row">
+        <!-- Product image -->
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
@@ -18,10 +20,14 @@
                 {% endif %}
             </div>
         </div>
+        <!-- Product details -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
+                <!-- Product name -->
                 <p class="mb-0 heading-3">{{ product.name }}</p>
+                <!-- Product price -->
                 <p class="mb-3 heading-5">£{{ product.price }}</p>
+                <!-- Product category -->
                 <p class="mb-3">
                     {% if product.category %}
                     {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
@@ -35,17 +41,21 @@
                     {% endif %}
                     {% endif %}
                 </p>
+                <!-- Product rating -->
                 {% if product.rating %}
                 <p><i class="fas fa-star me-1 rating-star"></i>{{ product.calculate_rating }} / 5</p>
                 {% else %}
                 <p>No Rating</p>
                 {% endif %}
+                <!-- Product description -->
                 <p class="mt-3">{{ product.description }}</p>
+                <!-- Edit and delete product options for superuser -->
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
                     <a href="{% url 'edit_product' product.id %}">Edit</a> |
                     <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#deleteProductModal">Delete</a>
                 </small>
+                <!-- Delete product modal -->
                 <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModal" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -64,13 +74,16 @@
                     </div>
                   </div>
                 {% endif %}
+                <!-- Add to bag -->
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="row">
+                        <!-- Product quantity -->
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="w-50">
                                 <div class="input-group input-group-{{ product.id }}">
+                                    <!-- Decrement quantity -->
                                     <div class="input-group-text">
                                         <button
                                             class="decrement-qty btn btn-primary rounded-0 decrement-qty_{{ product.id }}"
@@ -80,8 +93,10 @@
                                             </span>
                                         </button>
                                     </div>
+                                    <!-- Quantity -->
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
                                         name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
+                                    <!-- Increment quantity -->
                                     <div class="input-group-text">
                                         <button
                                             class="increment-qty btn btn-primary rounded-0 increment-qty_{{ product.id }}"
@@ -94,7 +109,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Buttons -->
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn btn-outline-primary mt-5">
                                 <span>
@@ -111,6 +126,7 @@
         </div>
     </div>
 
+    <!-- Reviews section -->
     <div class="row">
         <div class="col-md-10 mx-auto">
             <p class="heading-4 text-uppercase">Product Reviews</p>
@@ -118,6 +134,7 @@
     </div>
     <div class="row">
         <div class="col-md-10 mx-auto">
+            <!-- Show review form for logged in users -->
             {% if request.user.is_authenticated %}
             <form method="POST" action=".">
                 {% csrf_token %}
@@ -146,15 +163,18 @@
                 </div>
             </form>
             {% else %}
+            <!-- Login or register message -->
             <p class="heading-6"><em>Please <a href="{% url 'account_login' %}" class="text-decoration-none">login</a>
                     or <a href="{% url 'account_signup' %}" class="text-decoration-none">register</a> to post your own
                     review.</em></p>
             {% endif %}
         </div>
     </div>
+    <!-- Show existing reviews, if any -->
     <div class="row">
         <div class="col-md-10 mx-auto">
             {% if reviews %}
+            <!-- Reviews accordion -->
             <div class="accordion" id="reviews-accordion">
                 {% for review in reviews %}
                 <div class="accordion-item">
@@ -171,12 +191,14 @@
                         <div class="accordion-body">
                             <p>Review: {{ review.details }}</p>
                             <p>Date submitted: {{ review.date_submitted|date:"d-m-Y" }}</p>
+                            <!-- Show delete review button for user it belongs to and superuser -->
                             {% if review.submitted_by == request.user or request.user.is_superuser %}
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#deleteReviewModal">
                                 Delete Review
                             </button>
 
+                            <!-- Delete review modal -->
                             <div class="modal fade" id="deleteReviewModal" tabindex="-1"
                                 aria-labelledby="deleteReviewModal" aria-hidden="true">
                                 <div class="modal-dialog">

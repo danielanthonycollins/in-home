@@ -4,7 +4,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(models.Model):
-
+    """
+    Category model
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -19,6 +21,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Product model
+    """
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -31,6 +36,7 @@ class Product(models.Model):
         return self.name
 
     def calculate_rating(self):
+        """ Calculate average rating from reviews left """
         total_reviews = 0
 
         for review in self.reviews.all():
@@ -43,6 +49,9 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    """
+    Review model
+    """
     product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
     details = models.TextField()
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])

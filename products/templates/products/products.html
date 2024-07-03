@@ -2,12 +2,14 @@
 {% load static %}
 
 {% block content %}
+<!-- Products container -->
 <div class="container">
   <div class="row">
     <div class="col">
       <h1 class="text-center page-heading">Products</h1>
     </div>
   </div>
+  <!-- Categories header -->
   <div class="row mb-3">
     <div class="col text-center">
       {% for c in current_categories %}
@@ -16,7 +18,9 @@
       {% endfor %}
     </div>
   </div>
+  <!-- Product sorting and products found for search queries -->
   <div class="row mb-3">
+    <!-- Product sorting -->
     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
       <div class="sort-select-wrapper">
         <select id="sort-selector" class="custom-select custom-select-sm">
@@ -24,7 +28,7 @@
           <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
           </option>
           <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)
-          </option> 
+          </option>
           <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)
           </option>
           <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)
@@ -38,6 +42,7 @@
         </select>
       </div>
     </div>
+    <!-- Products found for search query -->
     <div class="col-12 col-md-6 order-md-first text-center text-md-start">
       <p class="text-muted mt-3">
         {% if search_term or current_categories or current_sorting != 'None_None' %}
@@ -47,21 +52,26 @@
       </p>
     </div>
   </div>
+  <!-- Product list -->
   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
     {% for product in products %}
     <a href="{% url 'product_detail' product.id %}" class="product-card d-flex flex-column">
       <div class="col">
         <div class="card h-100 border-0">
           {% if product.image %}
+          <!-- Product image -->
           <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
           {% else %}
           <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
           {% endif %}
           <div class="card-body product-padding">
+            <!-- Product name -->
             <p class="card-title">{{ product.name }}</p>
+            <!-- Product price -->
             <p class="card-text">£{{ product.price }}
             </p>
           </div>
+          <!-- Product rating -->
           <div class="card-footer border-0 bg-transparent mt-auto product-padding">
             {% if product.rating %}
             <p class="product-rating"><i class="fa-solid fa-star rating-star"></i> {{ product.calculate_rating }}/5</p>
@@ -76,25 +86,28 @@
   </div>
 </div>
 
-  <div class="to-top-button btn btn-primary">
-    <a class="btt-link d-flex h-100">
-      <div class="mx-auto my-auto">
-        <i class="fas fa-arrow-up"></i><span> Back to top</span>
-      </div>
-    </a>
-  </div>
+<!-- Back to top button -->
+<div class="to-top-button btn btn-primary">
+  <a class="btt-link d-flex h-100">
+    <div class="mx-auto my-auto">
+      <i class="fas fa-arrow-up"></i><span> Back to top</span>
+    </div>
+  </a>
+</div>
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-  $('.btt-link').click(function(e) {
-    window.scrollTo(0,0)
-  })
+  // Scroll to top when back to top button is clicked
+  $('.btt-link').click(function (e) {
+    window.scrollTo(0, 0);
+  });
 </script>
 
 <script type="text/javascript">
+  // Update URL When the sort selector changes
   $('#sort-selector').change(function () {
     var selector = $(this);
     var currentUrl = new URL(window.location);
@@ -114,6 +127,6 @@
 
       window.location.replace(currentUrl);
     }
-  })
+  });
 </script>
 {% endblock %}

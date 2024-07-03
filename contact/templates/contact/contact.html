@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Contact container -->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -13,6 +14,7 @@
             <p>Would you like to get in touch with us? Please fill in the contact form below and we will respond to you by email as soon as can. Alternatively, you can visit our store, call or email us directly!</p>
         </div>
     </div>
+    <!-- Contact form -->
     <div class="row">
         <div class="col-lg-6">
             <form method="POST" action="{% url 'contact' %}">
@@ -21,6 +23,7 @@
                 <button type="submit" class="btn btn-primary text-uppercase float-end mb-3">Send enquiry</button>
             </form>
         </div>
+        <!-- Contact details -->
         <div class="col-lg-6 contact-info">
             <p class="heading-3 m-2 ms-0">Our Contact Details</p>
             <p><i class="fa-solid fa-location-dot"></i> Unit 12, West Park

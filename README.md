@@ -45,7 +45,13 @@ In Home is an online e-commerce store selling all different types of homeware. U
 
 ### **User Stories**
 
+User (Customer) Stories
+
 - 
+
+User (Owner) Stories
+
+- As a superuser, 
 
 ### **Site Aims**
 
@@ -78,9 +84,6 @@ The [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-check
 
 **Features common to all pages**
 
-
-
-**Home Page**
 
 
 
@@ -219,6 +222,17 @@ Tools used:
 - Bootstrap
 - Fontawesome
 - Google Fonts
+- Stripe
+- Amazon Web Services
+- CI Database
+
+Deployment:
+
+- Heroku
+
+Version Control:
+
+- Git & Github
 
 ## **Credits**
 

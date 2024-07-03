@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Checkout container -->
     <div class="container">
         <div class="row">
             <div class="col">
@@ -15,6 +16,7 @@
             </div>
         </div>
 
+        <!-- Order summary -->
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -26,6 +28,8 @@
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
                     </div>
                 </div>
+
+                <!-- Products list -->
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-2 mb-1">
@@ -46,6 +50,8 @@
                         </div>
                     </div>
                 {% endfor %}
+
+                <!-- Order total -->
                 <hr class="my-0">
                 <div class="row text-end">
                     <div class="col-7 offset-2">
@@ -60,6 +66,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Delivery form -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -78,6 +86,8 @@
                         <div class="form-field">{{ order_form.county | as_crispy_field }}</div>
                         <div class="form-field">{{ order_form.postcode | as_crispy_field }}</div>
                         <div class="form-field">{{ order_form.country | as_crispy_field }}</div>
+                        
+                        <!-- Login/create an account -->
                         <div class="form-check form-check-inline float-end mr-0">
 							{% if user.is_authenticated %}
 								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -100,6 +110,7 @@
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
+                    <!-- Submit button -->
                     <div class="submit-button text-end mt-3 mb-2">                    
 						<a href="{% url 'view_bag' %}" class="btn btn-outline-primary">
 							<span>
@@ -113,7 +124,8 @@
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="small text-danger my-0">
+						<!-- Amount to be charged warning -->
+                        <p class="small text-danger my-0">
 							<span>
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
@@ -124,6 +136,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- Loading spinner -->
     <div id="loading-overlay">
         <h1 class="loading-spinner">
             <span>

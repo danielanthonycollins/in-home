@@ -1,3 +1,5 @@
+/* Stripe & checkout styling */
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -46,6 +48,12 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+.form-field {
+    margin-bottom: 0.8rem;
+}
+
+/* Overlay and spinner styling once order submit button is clicked */
+
 #loading-overlay {
 	display: none;
 	position: fixed;
@@ -63,8 +71,4 @@ select option[value=""] {
     justify-content: center;
     margin: 0;
     height: 100%;
-}
-
-.form-field {
-    margin-bottom: 0.8rem;
 }

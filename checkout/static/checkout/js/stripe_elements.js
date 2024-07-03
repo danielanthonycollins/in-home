@@ -49,13 +49,20 @@ card.addEventListener('change', function (event) {
 // Handle form submit
 var form = document.getElementById('payment-form');
 
+// Event listener for payment form submit
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+
+    // Disables the submit button & card input to prevent multiple submission
     card.update({
         'disabled': true
     });
     $('#submit-button').attr('disabled', true);
+
+    // Fades out the payment form
     $('#payment-form').fadeToggle(100);
+
+    // Loading animation
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
@@ -69,7 +76,9 @@ form.addEventListener('submit', function (ev) {
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
+        // Passes card details to Stripe
         stripe.confirmCardPayment(clientSecret, {
+            // Sends payment details 
             payment_method: {
                 card: card,
                 billing_details: {
@@ -98,6 +107,7 @@ form.addEventListener('submit', function (ev) {
                 }
             },
         }).then(function (result) {
+            // Send error message
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
@@ -106,12 +116,19 @@ form.addEventListener('submit', function (ev) {
                     </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
+                // Reload the payment form
                 $('#payment-form').fadeToggle(100);
+
+                // Hides the loading animation
                 $('#loading-overlay').fadeToggle(100);
+
+                // Re-enable the submit button and card input
                 card.update({
                     'disabled': false
                 });
                 $('#submit-button').attr('disabled', false);
+
+                // if payment details are valid submit payment form
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();

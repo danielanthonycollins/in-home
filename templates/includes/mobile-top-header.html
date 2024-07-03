@@ -1,4 +1,6 @@
+<!-- Top header on small and medium devices -->
 <div class="list-inline-item d-lg-none">
+    <!-- Logo -->
     <a href="{% url 'home' %}">
         <img src="{{ MEDIA_URL }}inhomelogo.png" alt="Inhome Logo" id="logo-small">
     </a>
@@ -6,6 +8,7 @@
 <ul class="d-block d-lg-none" id="mobile-top-header">    
     <div class="d-flex justify-content-between align-items-center w-100">
         <div class="d-flex">
+            <!-- Search button with search bar in dropdown -->
             <div class="list-inline-item ms-1">
                 <a class="nav-link" href="#" id="mobile-search" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="text-center">
@@ -28,6 +31,7 @@
                     </form>
                 </div>
             </div>
+            <!-- My account button with dropdown options -->
             <div class="list-inline-item ms-1">
                 <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="text-center">
@@ -48,6 +52,7 @@
                     {% endif %}
                 </div>
             </div>
+            <!-- Shopping bag -->
             <div class="list-inline-item ms-1">
                 <a class="nav-link" href="{% url 'view_bag' %}">
                     <div class="text-center">

@@ -41,21 +41,55 @@ In Home is an online e-commerce store selling all different types of homeware. U
 
 ### **Target Audiences**
 
-- 
+- Users in need of homeware for their new home
+- Users in need of homeware to refurbish their home
+- Users in need of homeware as a gift for a friend or relative
+- Users in need of homeware for an office or workplace (kitchen appliances etc)
 
 ### **User Stories**
 
-User (Customer) Stories
+As a new user, I want to:
 
-- 
+- Immediately understand the site's purpose
+- Easily navigate the website
+- Browse all available products
+- Filter products to quickly find what I need
+- Search for products
+- Contact the company for help or advice
+- Purchase products without registering for an account
+- Browse reviews left by other users
+- Stay informed on actions I take throughout the website
+- Receive confirmation of my order
+- Access the site on any device
+- Create and log into an account
 
-User (Owner) Stories
+As a registered user, I want to:
 
-- As a superuser, 
+- View my profile page
+- View my previous order history
+- View and update my personal information
+- Create reviews for products I've purchased
+- View reviews for products I've purchased
+- Update reviews for products I've purchased
+- Delete reviews for products I've purchased
+- Change my password
+- Make purchases without filling in my personal information each time
+- Logout of my account
+
+As an admin, I want to:
+
+- Add new products to the store
+- Update existing products
+- Delete existing products
+- Delete existing reviews
+- Easily access admin controls
 
 ### **Site Aims**
 
-- 
+- Offer a simple and responsive e-commerce store where users can purchase homeware items quickly and easily.
+- Offer the ability to register an account, allowing the user to see their previous order history, manage personal information and leave reviews for products they have purchased.
+- To keep the user informed as they nagivate the store, providing confirmation of successful actions taking and warning them when something hasn't worked the way they would expect.
+- To allow the user the ability to message the store via a contact form if they need help or advice.
 
 ### **Database Schema**
 

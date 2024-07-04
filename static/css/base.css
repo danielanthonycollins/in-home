@@ -93,7 +93,7 @@ p {
 
 .search-bar {
     color: #000;
-    border: 1px solid #0c1b2a;
+    border: 1px solid #0D1B2A;
     height: 40px;
     padding: 10px 12px;
     border-radius: 0px;
@@ -105,7 +105,7 @@ p {
 .search-bar:focus {
     outline: none;
     box-shadow: none;
-    border: 1px solid #0c1b2a;
+    border: 1px solid #0D1B2A;
 }
 
 .navbar {
@@ -171,7 +171,7 @@ p {
 /* Footer */
 
 .footer {
-    background-color: #0c1b2a;
+    background-color: #0D1B2A;
     color: #fff;
 }
 
@@ -305,7 +305,7 @@ p {
 }
 
 .category-box:hover .category-button {
-    background-color: #070f17;
+    background-color: #0D1B2A;
     color: white;
 }
 
@@ -461,7 +461,7 @@ p {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
     color: #fff;
-    background-color: #070f17;
+    background-color: #0D1B2A;
     border-color: none;
 }
 
@@ -469,7 +469,7 @@ p {
 
 .extra-form-label-styling {
     color: #000;
-    border: 1px solid #0c1b2a;
+    border: 1px solid #0D1B2A;
     height: 45px;
     padding: 10px 12px;
     border-radius: 0px;
@@ -482,12 +482,12 @@ p {
 .extra-form-label-styling-tall:focus {
     outline: none;
     box-shadow: none;
-    border: 1px solid #0c1b2a;
+    border: 1px solid #0D1B2A;
 }
 
 .extra-form-label-styling-tall {
     color: #000;
-    border: 1px solid #0c1b2a;
+    border: 1px solid #0D1B2A;
     height: 120px;
     padding: 10px 12px;
     border-radius: 0px;

@@ -48,41 +48,40 @@ In Home is an online e-commerce store selling all different types of homeware. U
 
 ### **User Stories**
 
-As a new user, I want to:
+**As a new user, I want to:**
 
-- Immediately understand the site's purpose
-- Easily navigate the website
-- Browse all available products
-- Filter products to quickly find what I need
-- Search for products
-- Contact the company for help or advice
-- Purchase products without registering for an account
-- Browse reviews left by other users
-- Stay informed on actions I take throughout the website
-- Receive confirmation of my order
-- Access the site on any device
-- Create and log into an account
+1. Immediately understand the site's purpose
+2. Easily navigate the website
+3. Browse all available products
+4. Filter products to quickly find what I need
+5. Search for products
+6. Contact the company for help or advice
+7. Purchase products without registering for an account
+8. Browse product reviews left by other users
+9. Stay informed on actions I take throughout the website
+10. Receive confirmation of my order
+11. Access the site on any device
+12. Create and log into an account
 
-As a registered user, I want to:
+**As a registered user, I want to:**
 
-- View my profile page
-- View my previous order history
-- View and update my personal information
-- Create reviews for products I've purchased
-- View reviews for products I've purchased
-- Update reviews for products I've purchased
-- Delete reviews for products I've purchased
-- Change my password
-- Make purchases without filling in my personal information each time
-- Logout of my account
+13. View my profile page
+14. View my previous order history
+15. View and update my personal information
+16. Create reviews for products I've purchased
+17. View reviews for products I've purchased
+18. Update reviews for products I've purchased
+19. Delete reviews for products I've purchased
+20. Change my password
+21. Make purchases without filling in my personal information each time
+22. Logout of my account
 
-As an admin, I want to:
+**As an admin, I want to:**
 
-- Add new products to the store
-- Update existing products
-- Delete existing products
-- Delete existing reviews
-- Easily access admin controls
+23. Add new products to the store
+24. Update existing products
+25. Delete existing products
+26. Delete existing reviews
 
 ### **Site Aims**
 
@@ -280,9 +279,109 @@ Feature/Test                                                                    
 
 ### **Testing user stories**
 
-**User story 1**: As a user, I want the site to be easy to use.
+**User story 1**: As a new user, I want to immediately understand the site's purpose.
 
-**Achieved?**: Yes. The application includes features and instructions which are clear to the user as they progress through the website.
+**Achieved?**: Yes. Upon entering the site, you are greeted with a welcome message summarising what the store sells along with a prompt to start shopping. The logo has also been designed to make it as clear as possible what the store is about, which is shown on every page of the site.
+
+**User story 2**: As a new user, I want to easily navigate the website.
+
+**Achieved?**: Yes. The navigation bar includes links to all pages on both desktop and mobile devices, so users are able to find what they need quickly and easily.
+
+**User story 3**: As a new user, I want to browse all available products.
+
+**Achieved?**: Yes. The store includes an 'All Products' section where they can view all available products, which is accessible on all devices. Browsing is made easier with options to sort by various different parameters.
+
+**User story 4**: As a new user, I want to filter products to quickly find what I need.
+
+**Achieved?**: Yes. Users are able to shop by category so they are able to find what they are looking for quickly and easily. 
+
+**User story 5**: As a new user, I want to search for products
+
+**Achieved?**: Yes. Users can search for products on all devices by using the search bar, which returns results quickly based on their input.
+
+**User story 6**: As a new user, I want to contact the company for help or advice
+
+**Achieved?**: Yes. The site includes a contact page where the user can submit an enquiry form to receive a response from the store. Contact details are also included, if they wish to contact the company directly themselves for an even faster response.
+
+**User story 7**: As a new user, I want to purchase products without registering for an account
+
+**Achieved?**: Yes. Users are able to place orders without having to register for an account.
+
+**User story 8**: As a new user, I want to browse product reviews left by other users
+
+**Achieved?**: Yes. Users are able to view product reviews without an account via the product detail page for the product they are interested in.
+
+**User story 9**: As a new user, I want to stay informed on actions I take throughout the website
+
+**Achieved?**: Yes. The user is kept informed as to whether their actions were successful or not via the messages that appear at the top right corner of the screen. Confirmation messages are included for all important actions, including adding items to the bag, placing orders and logging in or out (to name a few).
+
+**User story 10**: As a new user, I want to receive confirmation of my order
+
+**Achieved?**: Yes. Once an order is placed, the user is directed to a confirmation page telling them their order has been successfully placed. They will also receive an email with confirmation of their order.
+
+**User story 11**: As a new user, I want to access the site on any device
+
+**Achieved?**: Yes. The site is fully responsive and can be accessed on any device. In addition to testing the site on multiple devices with different screen sizes, the site was also tested using devtools with the smallest mobile device available in the list, the Galaxy Z Fold 5.
+
+**User story 12**: As a new user, I want to create and log into an account
+
+**Achieved?**: Yes. Users are able to create / login to their account via the 'My Account' button at the top of the screen, available on every page of the website. In addition, there are several prompts to either create and account or login to an existing account throughout the website on specific pages where relevant.
+
+**User story 13**: As a registered user, I want to view my profile page
+
+**Achieved?**: Yes. All registered users are provided with a profile page which can be viewed when they login.
+
+**User story 14**: As a registered user, I want to view my previous order history
+
+**Achieved?**: Yes. The user is able to see their previous order history on their profile page.
+
+**User story 15**: As a registered user, I want to view and update my personal information
+
+**Achieved?**: Yes. The user is able to view and update their personal information on their profile page.
+
+**User story 16**: As a registered user, I want to create reviews for products I've purchased
+
+**Achieved?**: Yes. Once logged in, users are able to create reviews for any product found within the store at the bottom of the product detail page for the product they are viewing.
+
+**User story 17**: As a registered user, I want to view reviews for products I've purchased
+
+**Achieved?**: Yes. Users are able to view reviews submitted by themselves or other users for any product found within the store at the bottom of the product detail page for the product they are viewing.
+
+**User story 18**: As a registered user, I want to update reviews for products I've purchased
+
+**Achieved?**: Yes. Users can update their existing reviews by submitting a new review for the same product as the existing review, which will overwrite / update it.
+
+**User story 19**: As a registered user, I want to delete reviews for products I've purchased
+
+**Achieved?**: Yes. Users can delete their existing reviews by clicking the delete button found within the review of the product they have submitted the review for.
+
+**User story 20**: As a registered user, I want to change my password
+
+**Achieved?**: Yes. Users can update their password via the profile page, or if they have forgotton it they can click the forgotton password link on the login page to reset it.
+
+**User story 21**: As a registered user, I want to make purchases without filling in my personal information each time
+
+**Achieved?**: Yes. Users are given the option to save their personal information in the checkout when completing an order, so it's saved to their profile and will be automatically filled in next time they order. They can also go to their profile and enter / update their information.
+
+**User story 22**: As a registered user, I want to logout of my account
+
+**Achieved?**: Yes. Users can logout of their account by clicking the logout button within the my account section at the top of the page.
+
+**User story 23**: As an admin, I want to add new products to the store
+
+**Achieved?**: Yes. Admin users are able to add new products to the store via the 'Add a product' button within the 'My Account' tab at the top of the page.
+
+**User story 24**: As an admin, I want to update existing products
+
+**Achieved?**: Yes. Admin users are able to update existing products via the 'Edit' button found on the product details page for the product to be editted.
+
+**User story 25**: As an admin, I want to delete existing products
+
+**Achieved?**: Yes. Admin users are able to delete existing products via the 'Delete' button found on the product details page for the product to be deleted.
+
+**User story 26**: As an admin, I want to delete existing reviews
+
+**Achieved?**: Yes. Admin users are able to delete existing reviews that belong to any user via the 'Delete Review' button found within the review itself on the product detail page.
 
 ## **Bugs**
 

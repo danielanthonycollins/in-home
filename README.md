@@ -296,8 +296,13 @@ I found the following bugs during the development process:
   - Cause: 
   - Solution: 
 
-  - Mobile search bar
+- Mobile search bar
   - Problem: Mobile search bar is overlapping content below when it appears, rather than pushing everything down.
+  - Cause: 
+  - Solution: 
+
+- Dropdown with no arrow
+  - Problem: Country inputs on profile and checkout page, plus the category choice on add and edit product page do not include an arrow to show they are a dropdown.
   - Cause: 
   - Solution: 
 

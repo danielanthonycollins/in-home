@@ -93,7 +93,9 @@ As an admin, I want to:
 
 ### **Database Schema**
 
--
+Many thanks to [Draw SQL](https://drawsql.app/) for assisting me with my database schema. This really helped me to visualise how the tables would be set up and where each table connects.
+
+![Database Schema](docs/schema/sql-schema.png)
 
 ### **Wireframes**
 

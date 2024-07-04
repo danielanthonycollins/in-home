@@ -162,16 +162,25 @@ The original wireframes for the main pages of the store can be found below. Duri
 
 ### **Color Scheme**
 
-Navy: #0D1B2A
-Blue: #415A77
+- Navy: #0D1B2A
+- Blue: #415A77
+- Black: #000
+- White: #fff
+- Grey: #d5d5d5 (used when hovering navigation links)
 
-The [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/) was used to ensure ..., all results passed except the small text in the AAA test, however after a discussion with my mentor we agreed this was OK as the criteria for the AAA testing is incredibly high and almost never passes.
+The [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/) was used to ensure that any navy/blue and white/grey combinations were suitable for use. All results passed except the small text in the AAA test for the blue/grey combination, however after a discussion with my mentor we agreed this was OK as the criteria for the AAA testing is incredibly high and almost never passes.
 
-![Color contrast]()
+![Color contrast](docs/color/navy-white-color-check.png)
+
+![Color contrast](docs/color/blue-white-color-check.png)
+
+![Color contrast](docs/color/blue-grey-color-check.png)
 
 ## **Typography**
 
+I decided to import and use the Outfit font using Google Fonts for the store, with Helvetica and sans-serif acting as the back up fonts should the Outfit import fail.
 
+I wanted to choose a font which wasn't mainstream and unique, but also smart and representative of the profesional yet fun nature of the store. It worked well with lowercase and uppercase letters, special characters and numbers when tested on the Google platform prior to importing.
 
 ## **Features**
 
@@ -182,7 +191,15 @@ The [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-check
 
 ## **Future Enhancements**
 
+Some possible enhancements which could be applied in the future include:
 
+- A section in the users profile which displays any previous reviews they have left for products, with the option to update or delete them directly from their profile.
+- A featured product section above the footer which shows on any page of the site, so the store can promote the most popular products, or products they wish to push at any given time.
+- A social account login feature, so the user can login to the website using their social media account rather than an email
+- A special offers section for any discounted products or special deals available
+- A 'You may also like...' section at the bottom of each product which shows products the user may be interested in based on what they are currently viewing
+- A 'Suggested for you' section on the users profile page which suggests products they may wish to purchase based on thier previous order history
+- A newsletter signup, so the store can market their products and special offers directly to interested users.
 
 ## **Testing Phase**
 
@@ -192,15 +209,15 @@ Responsiveness was checked and worked as intended with the following browsers an
 
 - Extra Large (27" Mac Desktop):
 
-  - Chrome (Version 123.0.6312.106 Official Build x86_64)
-  - Safari (Version 17.4.1 19618.1.15.11.14)
-  - Firefox (Version 123.0 64-bit)
+  - Chrome (Version )
+  - Safari (Version )
+  - Firefox (Version )
 
 - Large (15" MacBook Pro Laptop):
 
-  - Chrome (Version 123.0.6312.107 Official Build x86_64)
-  - Firefox (Version 124.0.1 64-bit)
-  - Safari (Version 17.4.1 17618.1.15.111.8, 17618)
+  - Chrome (Version )
+  - Firefox (Version )
+  - Safari (Version )
 
 - Medium (10.9" iPad):
 
@@ -210,11 +227,11 @@ Responsiveness was checked and worked as intended with the following browsers an
 
 - Small (6" iPhone 13):
 
-  - Chrome (Version 123.0.6312.52)
+  - Chrome (Version )
   - Safari
-  - Firefox (Version 124.3 40336)
+  - Firefox (Version )
 
-DevTools was also used to check the responsiveness at various screen sizes and devices from the list of devices available. All were fully responsive and caused no issues. 
+DevTools was also used to check the responsiveness at various screen sizes and devices from the list of devices available. All were fully responsive and caused no issues, including the smallest device available in the list which was a Galaxy Z Fold 5.
 
 ### **Functionality**
 
@@ -239,36 +256,25 @@ Feature/Test                                                                    
 <details>
 <summary>Home Page</summary>
 <br>
-<img alt="Home page HTML validator" src="documentation/html-validators/homepagehtmlvalidator.png">
+<img alt="" src="">
 </details>
 <br>
 
 **CSS Validator**
 
-style.css result
 
-![style.css validator result](documentation/css-validator/cssvalidator.png)
 
 **JS Hint**
 
-script.js result
 
-![script.js validator result](documentation/js-validator/jsvalidator.png)
 
 **CI Python Linter**
 
-app.py result
 
-![app.py linter result](documentation/python-validator/pythonlinter.png)
 
 ### **Lighthouse**
 
-<details>
-<summary>Home Page Desktop</summary>
-<br>
-<img alt="Home page desktop lighthouse results" src="documentation/lighthouse/homedesktoplighthouse.png">
-</details>
-<br>
+
 
 ### **Testing user stories**
 
@@ -280,16 +286,20 @@ app.py result
 
 I found the following bugs during the development process:
 
-- Subject
-  - Problem: 
+- Toasts
+  - Problem: Toast messages not showing when user takes an action which should display a message.
+  - Cause: Jquery doesn't recognise the toast() function based on the Bootstrap version being used
+  - Solution: Replaced it with vanilla javascript which worked with the Bootstrap version being used
+
+- Sort by rating
+  - Problem: When choosing to sort by high to low rating, the order is not correct and highest rated products are not showing first
   - Cause: 
   - Solution: 
 
-filtering issue when trying to add icons to specific categories. Was missing the .name from the if statement so the conditions couldn't be met
-
-Toasts bug where the jquery was causing the toast not to load as it didn't recognise the toast() function. Replaced it with vanilla javascript which worked with the bootstrap version I was using.
-
-Emails issue after deploying, when setting up contact form getting SMTP.starttls() error and form not submitting correctly
+  - Mobile search bar
+  - Problem: Mobile search bar is overlapping content below when it appears, rather than pushing everything down.
+  - Cause: 
+  - Solution: 
 
 ---
 
@@ -341,3 +351,6 @@ Special thanks to my mentor Richard Wells for his excellent advice and support t
 
 ### **Media**
 
+Product images were sourced using the free image sites [Unsplash](https://unsplash.com/), [Free Images](https://www.freeimages.com/) and [Pexels](https://www.pexels.com/).
+
+I designed the In Home logo myself using my own Adobe software.

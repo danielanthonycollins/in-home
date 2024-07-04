@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 
 class Category(models.Model):
@@ -35,18 +37,15 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    def calculate_rating(self):
-        """ Calculate average rating from reviews left """
-        total_reviews = 0
-
-        for review in self.reviews.all():
-            total_reviews += review.rating
-
-        if total_reviews > 0:
-            return total_reviews / self.reviews.count()
-
-        return 0
-
+    def update_rating(self):
+        """ Update the product's rating based on the average of its reviews """
+        reviews = self.reviews.all()
+        if reviews.exists():
+            total = sum(review.rating for review in reviews)
+            self.rating = total / reviews.count()
+        else:
+            self.rating = None
+        self.save()
 
 class Review(models.Model):
     """
@@ -60,3 +59,12 @@ class Review(models.Model):
 
     def __str__(self):
         return f'Review for {self.product} by {self.submitted_by}'
+
+@receiver(post_save, sender=Review)
+def update_product_rating_on_save(sender, instance, **kwargs):
+    instance.product.update_rating()
+
+
+@receiver(post_delete, sender=Review)
+def update_product_rating_on_delete(sender, instance, **kwargs):
+    instance.product.update_rating()

@@ -100,9 +100,9 @@ Many thanks to [Draw SQL](https://drawsql.app/) for assisting me with my databas
 
 The original wireframes for the main pages of the store can be found below. During development, a few decisions were made to change the original structure.
 
-- Home Page: The welcome heading and text was moved into the main image underneath the navigation to give this area more substance and make it one of the first things the user can see upon entering the store.
-- Product Detail Page: Instead of using Bootstrap cards to display existing review, I opted to use the Bootstrap accordion instead as the cards would be quite big, and also I could incorporate the stores color theme into the accordion in a more aesthetic way than a card. I felt the overall flow of the page was better as a result.
-- Contact Page: A few minor label changes for the input fields, plus the addition of the company contact details should the user wish to contact them by phone, email or visit directly. These details are already in the footer, however as one of the essential pieces of information if a user needs help or advice, I felt it was a good idea to include it on the contact page as well.
+- **Home Page**: The welcome heading and text was moved into the main image underneath the navigation to give this area more substance and make it one of the first things the user can see upon entering the store.
+- **Product Detail Page**: Instead of using Bootstrap cards to display existing review, I opted to use the Bootstrap accordion instead as the cards would be quite big, and also I could incorporate the stores color theme into the accordion in a more aesthetic way than a card. I felt the overall flow of the page was better as a result.
+- **Contact Page**: A few minor label changes for the input fields, plus the addition of the company contact details should the user wish to contact them by phone, email or visit directly. These details are already in the footer, however as one of the essential pieces of information if a user needs help or advice, I felt it was a good idea to include it on the contact page as well.
 
 <br>
 
@@ -187,8 +187,11 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 **Features common to all pages**
 
+Insert here
 
+**Other Features**
 
+Insert here
 
 ## **Future Enhancements**
 
@@ -404,14 +407,176 @@ I found the following bugs during the development process:
 
 - Dropdown with no arrow
   - Problem: Country inputs on profile and checkout page, plus the category choice on add and edit product page do not include an arrow to show they are a dropdown.
-  - Cause: 
-  - Solution: 
+  - Cause: The 'appearance' property was being overwriten due to other classes taken priority from earlier stages of developmemt.
+  - Solution: Added 'appearance: menulist' to 'extra-form-label-styling' class in base.css and also to 'form-control' in checkout.css
 
 ---
 
 ## **Deployment**
 
+To deploy this Django project, follow the steps below.
 
+### **Prerequisites**
+
+Ensure you have the following:
+
+- Python 3.12.2
+- Git
+- Heroku account
+- Amazon Web Services (AWS) account
+- Stripe account
+- Gmail account for SMTP
+
+### **Installation**
+
+1. Clone the repository from GitHub:
+
+    ```
+    git clone https://github.com/danielanthonycollins/in-home.git
+    cd in-home
+    ```
+
+2. Set up the virtual environment in terminal:
+
+    ```
+    python -m venv env
+    . env/bin/activate
+    ```
+
+3. Install the project dependencies:
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+4. Create an env.py file in the root directory of the project for your environment variables using the example template below:
+
+    ```
+    import os
+
+    os.environ['SECRET_KEY'] = 'your_secret_key'
+    os.environ['DATABASE_URL'] = 'your_database_url'
+    os.environ['AWS_ACCESS_KEY_ID'] = 'your_aws_access_key_id'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'your_aws_secret_access_key'
+    os.environ['STRIPE_PUBLIC_KEY'] = 'your_stripe_public_key'
+    os.environ['STRIPE_SECRET_KEY'] = 'your_stripe_secret_key'
+    os.environ['EMAIL_HOST_USER'] = 'your_email'
+    os.environ['EMAIL_HOST_PASSWORD'] = 'your_email_password'
+    ```
+
+5. Ensure env.py and the other following files are included in your .gitignore file to keep them hidden:
+
+    ```
+    *.pyc
+    __pycache__/
+    env.py
+    ```
+
+### **Configuring AWS for Media and Static Files**
+
+- Log in to your AWS account and create an S3 bucket for storing your media and static files.
+- Configure the bucket to allow public access.
+- Update your Django settings to use django-storages and boto3 for managing static and media files.
+- Add the following configurations to your settings.py:
+
+    ```
+    AWS_STORAGE_BUCKET_NAME = 'your_bucket_name'
+    AWS_S3_REGION_NAME = 'your_region'  # e.g., 'us-east-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+    ```
+
+
+### **Setting Up Stripe**
+
+- Obtain your Stripe API keys from the dashboard.
+- Add these keys to your env.py file.
+
+### **Configuring Gmail for SMTP**
+
+Gmail settings:
+
+  - Go to your Gmail account and click account settings
+  - Click 'Accounts and Import', then 'Other Google Account Settings' and then 'Security'.
+  - Under 'Signing into Google', turn on 2-Step Verification. Follow the steps until this is complete.
+  - Once complete, you should be able to see 'App passwords' on the 'Security' page. Click that.
+  - Select 'Mail' as the app and then 'Django' as the device.
+  - You will then see a 16 character password, keep this on screen as you will need it below.
+
+Configure your settings.py to use Gmail for sending emails:
+
+```
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+```
+
+### **Deploying to Heroku**
+
+1. In your IDE, ensure the requirements are up to date with:
+
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+
+2. Log in to Heroku via the terminal and crease a new app:
+
+    ```
+    heroku login
+    heroku create your-app-name
+    ```
+
+4. Set your environment variables on Heroku:
+
+    ```
+    heroku config:set SECRET_KEY='your_secret_key'
+    heroku config:set DATABASE_URL='your_database_url'
+    heroku config:set AWS_ACCESS_KEY_ID='your_aws_access_key_id'
+    heroku config:set AWS_SECRET_ACCESS_KEY='your_aws_secret_access_key'
+    heroku config:set STRIPE_PUBLIC_KEY='your_stripe_public_key'
+    heroku config:set STRIPE_SECRET_KEY='your_stripe_secret_key'
+    heroku config:set HOST='your-app-name.herokuapp.com' # the heroku app URL or live domain
+    heroku config:set STRIPE_WH_SECRET=''
+    heroku config:set EMAIL_HOST_USER='your_email'
+    heroku config:set EMAIL_HOST_PASSWORD='your_email_password'
+    heroku config:set USE_AWS='True' # enable media/static to be collected from AWS S3
+    ```
+
+5. Create a Procfile with gunicorn and run migrations:
+
+    ```
+    web: gunicorn base_project.wsgi
+    release: python manage.py migrate
+    ```
+
+6. Push your code to Heroku:
+
+    ```
+    git push heroku main
+    ```
+
+7. Run migrations on Heroku:
+
+    ```
+    heroku run python manage.py migrate
+    ```
+
+8. With deployment successful, create a new superuser:
+
+    ```
+    heroku run python manage.py createsuperuser
+    ```
 
 ## **Tech**
 

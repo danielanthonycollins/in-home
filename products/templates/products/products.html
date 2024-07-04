@@ -73,8 +73,8 @@
           </div>
           <!-- Product rating -->
           <div class="card-footer border-0 bg-transparent mt-auto product-padding">
-            {% if product.rating %}
-            <p class="product-rating"><i class="fa-solid fa-star rating-star"></i> {{ product.calculate_rating }}/5</p>
+            {% if product.rating > 0 %}
+            <p class="product-rating"><i class="fa-solid fa-star rating-star"></i> {{ product.rating }}/5</p>
             {% else %}
             <p class="product-rating">No rating</p>
             {% endif %}

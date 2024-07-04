@@ -52,6 +52,10 @@ select option[value=""] {
     margin-bottom: 0.8rem;
 }
 
+.form-control {
+    appearance: menulist;
+}
+
 /* Overlay and spinner styling once order submit button is clicked */
 
 #loading-overlay {

@@ -259,14 +259,107 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 - **Image**: The product image can be enlarged by clicking on it.
 - **Price**: The product price is very important and is clearly shown so the user can decide if they can afford to purchase the item.
-- **Category**: The category which the product belongs to is displayed with a relevant icon.
+- **Category**: The category which the product belongs to is displayed with a relevant icon. If clicked, the user is taken to that category to view more products if they wish.
 - **Rating**: The product rating (if any) is also displayed for the user here as well as on the products page.
+- **Edit/Delete product**: The superuser is shown buttons to edit and delete products, allowing them to manage product listings directly on the site rather than using the admin panel. If the user clicks delete, a modal is displayed asking if they are sure they wish to delete the product, in case they didn't mean to click it.
 - **Description**: The product description provides more details about the product being views should the user want more details that aren't provided in the product name.
 - **Quantity select**: The user is able to select a quantity for any product provided the value is between 1 and 99. The buttons provided to the user automatically stop them from entering a value outside of this range. If the user manually types in a value which is outside of this value and attempts to add the product to the shopping bag, they will be told to enter a value within the 1-99 range. In addition, if the user already has a given quantity of the same product in their shopping bag and attempts to add a further quantity via the product detail page which brings the shopping bag quantity above 99, they are informed that the shopping bag quantity has been set to the max value allowed of 99.
 - **Buttons**: The user can go back to the products page with the keep shopping button, or add the product to their shopping bag with the add to bag button. Using the add to bag button will trigger a message to let the user know what the outcome of their action was.
 
+**Reviews (Product detail page)**
 
+![Product review form](docs/features/other/review-form.png)
 
+- Users who are logged in are provided with a form to leave a review for a product listed on the website. They can enter their feedback and also a product rating and submit the review to be displayed for all other users to see. The form can only be submitted if there is data entered into the feedback box and also a rating is chosen, if not the user is prompted with a pop up telling them they must do so before submitting.
+- If a user has already left a review of the current product, submitting the form again will update their existing review. They are given this option in case they changed their mind about the product. This also stops a disgruntled customer from leaving multiple bad reviews, which would seriously affect the product rating unfairly.
+- If the user is not logged in, the form is not displayed but they are shown a message asking them to login or register to leave a review, along with login and register links to speed the process up for them and saving them having to find the links to those pages elsewhere.
+- Once a review is submitted, it is shown in the list below the form (see below for more on this).
+
+<br>
+
+![Product review list](docs/features/other/review-list-2.png)
+
+- All reviews that are submitted are shown in the reviews list below the form, for all users to see. They are stored within a Bootstrap accordion to save space on the page and organise them nicely.
+- If the review belongs to the logged in user, they are able to delete it if they wish. The superuser can also delete any reviews left on the website, in case a user submits something with inappropriate language etc. If the user clicks delete, a modal is displayed asking if they are sure they wish to delete the review, in case they didn't mean to click it.
+- If no reviews have been submitted, the list isn't shown and a message appears to say no reviews have been submitted yet.
+
+**Shopping bag**
+
+![Shopping bag](docs/features/other/shopping-bag.png)
+
+- The shopping bag page contains the items the user has added to their bag while browsing the site. If no items have been added, a message appears to tell the user the bag is empty and shows a button to go back and keep shopping.
+- **Quantity / Update**: The user is able to increase and decrease the quantity of any particular item in their shopping bag and update the total using the update button. There are checks/validation in place to stop the user from generating a quantity less than 1 or greater than 99. If they try to bypass this, they are shown a message to inform them that the quantity has been set to the nearest possible quantity to their original entry attempt.
+- **Remove item**: Users are also able to remove items from the shopping bag completely, using the remove button.
+- **Product image**: The product image is a link to the product they click on, in case they want to go back to it. The subtotal for each product is automatically updated each time the user updates the quantity for that given item.
+- **Free delivery threshold**: If the user is below the £100 free delivery threshold, a small red message appears to let them know how much more they can spend to get free delivery.
+- **Buttons**: A button is included to keep shopping if the user wishes, otherwise they can proceed to the checkout.
+
+**Checkout**
+
+![Checkout form](docs/features/other/checkout-form.png)
+
+- The checkout form contains all of the required details needed from the user to process their order. Including their full name, email address and delivery information.
+- **Save info**: A checkbox is included giving the user the option to save their information to their profile. If they opt for this, the next time they place an order, their details are automatically pre-filled. They can update this information on their profile page if they wish. If the user is not logged in, they are shown a message prompting them to login or register to save their information.
+- **Stripe**: The store uses stripe to process it's payments. Once the complete order button is clicked, a loading spinner is displayed until the order is processed successfuly, which aims to prevent the user from exiting the checkout while the store processes their payment. The user is shown a small warning message to let them know how much their card will be charged.
+
+<br>
+
+![Checkout summary](docs/features/other/checkout-summary.png)
+
+- The user is also shown a summary of their order on the checkout page, just so they are kept informed of what they are about to order. If they spot a mistake at this point, they can go back and adjust their shopping bag before completing the order and submitting payment.
+
+**Checkout Confirmation**
+
+![Checkout confirmation](docs/features/other/checkout-confirm.png)
+
+- Once the user submits an order successfully, they are shown a confirmation page containing their order details, delivery and billing information.
+- **Email**: A confirmation of their order is also sent to their email address containing their order details.
+- **Order number**: The order number provided is unique to that particular order so it can be easily and uniquely referenced later if needed.
+- **Continue Shopping**: If the user wishes to continue shopping for more products, they can use the button provided to be redirected to the products page.
+
+<br>
+
+![Checkout success message](docs/features/other/checkout-success.png)
+
+- In addition to the order confirmation provided above, and the email the user received, they are also shown a success message in the top right hand corner just to give them the extra confidence that their order was successfuly submitted.
+
+**Login page**
+
+![Login page](docs/features/other/login.png)
+
+- The login page is where the user is able to login to their pre-registered account. If the user doesn't have an account already, they are able to register for one using the link provided. They can also reset their password if they can't remember it.
+
+**Signup page**
+
+![Signup page](docs/features/other/signup.png)
+
+- The signup page is where the user is able to create an account. Users must enter matching email addresses and passwords as part of the validation. The site will also inform them if they try to use a username which is already in use. If the user tries to signup for an account using an email address which is already in the database, an email will be sent to that email address to inform the person who has access to it, in case someone it trying to commit fraud.
+
+**Password reset page**
+
+![Password reset page](docs/features/other/password-reset.png)
+
+- This page allows the user to reset their password if they have forgotton it, so the user doesn't have to sign up for another account if they've just forgotton their password.
+
+**Change password page**
+
+![Change password page](docs/features/other/change-password.png)
+
+- This page allows the logged in user to change their password if they wish. This is useful if they believe someone is trying to get access to their account and personal information.
+
+**Add a product**
+
+![Add product](docs/features/other/add-product.png)
+
+- This page is only accessible by the superuser, so customers without permission are not able to access this page via the product detail page or by entering the /products/add/ into the URL bar.
+- Here, the superuser can add products to the store, selecting all of the relevant product details without having to access the admin panel.
+
+**Edit product**
+
+![Edit product](docs/features/other/edit-product.png)
+
+- This page is only accessible by the superuser, so customers without permission are not able to access this page via the product detail page or by entering the /products/edit/ into the URL bar.
+- Here, the superuser can edit existing products in the store.
 
 ## **Future Enhancements**
 
@@ -472,11 +565,6 @@ I found the following bugs during the development process:
 
 - Sort by rating
   - Problem: When choosing to sort by high to low rating, the order is not correct and highest rated products are not showing first
-  - Cause: 
-  - Solution: 
-
-- Mobile search bar
-  - Problem: Mobile search bar is overlapping content below when it appears, rather than pushing everything down.
   - Cause: 
   - Solution: 
 

@@ -361,6 +361,21 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 - This page is only accessible by the superuser, so customers without permission are not able to access this page via the product detail page or by entering the /products/edit/ into the URL bar.
 - Here, the superuser can edit existing products in the store.
 
+**Profile page**
+
+![Profile page](docs/features/other/profile-page.png)
+
+- This is the users profile page. Here they can update their personal information.
+- Users can also view their past order history. By clicking on the shortened version of their order number, they are taken to a page showing their full order details in case they need to look back on what they ordered.
+
+**Contact page**
+
+![Contact page](docs/features/other/contact-page.png)
+
+- The contact page is where the user can find multiple ways of contacting the store.
+- **Contact form**: The contact form allows the user a way of submitting a message to the store for a response. It requies a name, email, subject and enquiry message and once submitted, the form is sent to the In Home team's email address so they can assist the customer.
+- **Contact details**: The contact page also features the company contact details, in case the user wishes to contact the store directly.
+
 ## **Future Enhancements**
 
 Some possible enhancements which could be applied in the future include:

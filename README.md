@@ -246,12 +246,12 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 **Products page**
 
-![Products page](docs/features/other/products-page.png)
+![Products page](docs/features/other/products-page-2.png)
 
 - **Sorting**: Users are able to sort products on any products page using various parameters. If sorting by rating, products with a rating are shown first, with all products without a current rating following behind.
 - **Product layout**: On larger devices the site makes the most of the width showing 4 products in a single row. The amount of products in a single row reduces as the screen/device becomes smaller. Even on small devices, two products sit on a single row to stop the user from having to scroll down very far to see all products on the page. All details can be clearly seen even with two products in a single row.
-- **Rating**: The product rating (if any) is calculated based as an average of all review ratings submitted for that product.
-- **Link to product**: When hovering over the product, the name and price are underlined to offer a better product browsing experience to the user. They can access the product detail page for the product they wish to view by clicking anywhere within the product card container.
+- **Rating**: The product rating (if any) is calculated based as an average of all review ratings submitted for that product to date.
+- **Link to product**: When hovering over the product image, name or price, the name and price are underlined to make it clear to the user that if they click now they will open the product. If they hover over the category, only the category is underlined which links to the relevant category page.
 
 **Product detail page**
 

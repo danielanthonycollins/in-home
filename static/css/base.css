@@ -337,6 +337,11 @@ p {
     font-size: 0.9rem;
 }
 
+.accordion {
+    --bs-accordion-border-radius: none;
+    --bs-accordion-inner-border-radius: none;
+}
+
 .accordion-button:not(.collapsed),
 .accordion-button {
     color: #fff;
@@ -480,7 +485,8 @@ p {
 }
 
 .extra-form-label-styling:focus,
-.extra-form-label-styling-tall:focus {
+.extra-form-label-styling-tall:focus,
+.extra-form-label-styling-rating:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid #0D1B2A;
@@ -490,6 +496,17 @@ p {
     color: #000;
     border: 1px solid #0D1B2A;
     height: 120px;
+    padding: 10px 12px;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
+    margin-bottom: 0.8rem;
+}
+
+.extra-form-label-styling-rating {
+    color: #000;
+    border: 1px solid #0D1B2A;
+    height: 45px;
     padding: 10px 12px;
     border-radius: 0px;
     box-shadow: 0 1px 3px 0 #e6ebf1;

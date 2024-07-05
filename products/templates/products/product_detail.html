@@ -30,15 +30,19 @@
                 <!-- Product category -->
                 <p class="mb-3">
                     {% if product.category %}
-                    {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
-                    <i class="fa-solid fa-utensils me-1 category-icon"></i>Kitchen
-                    {% elif product.category.name|in_category:"chairs,televisions,tables" %}
-                    <i class="fa-solid fa-couch me-1 category-icon"></i>Living Room
-                    {% elif product.category.name|in_category:"sheets,wardrobes,pillows" %}
-                    <i class="fa-solid fa-bed me-1 category-icon"></i>Bedroom
-                    {% elif product.category.name|in_category:"towels,mirrors,accessories" %}
-                    <i class="fa-solid fa-bath me-1 category-icon"></i>Bathroom
-                    {% endif %}
+                    <span class="mt-1">
+                        <a href="{% url 'products' %}?category={{ product.category.name }}" class="product-detail-category">
+                            {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
+                            <i class="fa-solid fa-utensils me-1 category-icon"></i>{{ product.category.friendly_name }}
+                            {% elif product.category.name|in_category:"chairs,televisions,tables" %}
+                            <i class="fa-solid fa-couch me-1 category-icon"></i>{{ product.category.friendly_name }}
+                            {% elif product.category.name|in_category:"sheets,wardrobes,pillows" %}
+                            <i class="fa-solid fa-bed me-1 category-icon"></i>{{ product.category.friendly_name }}
+                            {% elif product.category.name|in_category:"towels,mirrors,accessories" %}
+                            <i class="fa-solid fa-bath me-1 category-icon"></i>{{ product.category.friendly_name }}
+                            {% endif %}
+                        </a>
+                    </span>
                     {% endif %}
                 </p>
                 <!-- Product rating -->
@@ -143,12 +147,13 @@
                 {% csrf_token %}
                 <div>
                     <label for="review" class="form-label mb-2">What did you think about this product?</label>
-                    <textarea name="details" class="form-control extra-form-label-styling-tall" placeholder="Enter your feedback here..." id="review"
-                        rows="5" required></textarea>
+                    <textarea name="details" class="form-control extra-form-label-styling-tall"
+                        placeholder="Enter your feedback here..." id="review" rows="5" required></textarea>
                 </div>
                 <div>
                     <label for="rating" class="form-label my-2">Please rate this product</label>
-                    <select name="rating" class="form-select mb-3 extra-form-label-styling-rating" id="rating" aria-label="Choose Rating" required>
+                    <select name="rating" class="form-select mb-3 extra-form-label-styling-rating" id="rating"
+                        aria-label="Choose Rating" required>
                         <option value="" disabled selected>Please choose a rating...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

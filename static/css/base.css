@@ -311,12 +311,20 @@ p {
 
 /* Products */
 
-.product-card {
+.product-card a {
     text-decoration: none;
+    color: hsl(0, 0%, 0%);
 }
 
-.product-card:hover .card-body p,
-.product-card:hover .card-footer small {
+.product-detail-category {
+    text-decoration: none;
+    color: #000;
+}
+
+.product-card .card a:hover .card-title,
+.product-card .card a:hover .card-text,
+.category-link:hover,
+.product-detail-category:hover {
     text-decoration: underline;
 }
 

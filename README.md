@@ -2,7 +2,7 @@
 
 [View the deployed project here](https://in-home-9aea5ddaebd0.herokuapp.com/)
 
-![Application shown on multiple devices]()
+![Application shown on multiple devices](docs/devices/in-home-devices-black.png)
 
 ## **Site Overview**
 
@@ -185,13 +185,88 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 ## **Features**
 
-**Features common to all pages**
+### **Features common to all pages**
 
-Insert here
+**Navigation**
 
-**Other Features**
+![Navigation](docs/features/all_pages/navbar.png)
 
-Insert here
+- **Search bar**: Users are able to search for products quickly and easily. If nothing is entered into the search bar but the user still clicks the search button, they receive a message informing them they didn't search for anything. The search functionality finds results that match the product name or description, to give the user the best chance of finding what they need.
+- **Logo**: The In Home logo was designed to be instantly recognisable as a logo for a home store. Clicking the logo returns you to the home page.
+- **My Account**: The options that appear within the dropdown that appears when My Account is clicked depend on whether or not the user is logged in, and also if the user is a superuser. If the user is not logged in, they will see register and login options. If the user is logged in, they will see my profile and logout. If the user is also a superuser, the superuser will see the add new product button.
+- **Shopping Bag**: The shopping bag shows the user their current bag total, and when clicked takes them to the shopping bag page.
+- **Main nav links**: The blue navigation bar contains the main site navigation allowing the user to browse through the site efficiently. A home button was included so the user can always return home regardless of where they are on the website. To find products, users can shop by category, or use the all products list to view all products, with or without a sorting choice.
+- **Free delivery banner**: A free delivery banner was included to ensure the user is always aware of the minimum spend to receive free delivery. This incentivizes them to spend more if they are close to the free delivery threshold.
+
+<br>
+
+**Mobile Navigation**
+
+![Mobile navigation](docs/features/all_pages/navbar-mobile.png)
+
+- **Burger icon**: On smaller devices, the main navigation bar is collapsed within the burger icon on the left.
+- **Search**: While the search functionality for the search feature works exactly the same when used, the search bar itself appears as a dropdown when the search button is clicked on smaller devices for a better user experience.
+- **Other links**: The other links including the logo, my account and shopping bag work the same as above.
+
+<br>
+
+**Footer**
+
+![Footer](docs/features/all_pages/footer.png)
+
+- **Quick links**: Quick links are provided for the user so they can quickly access the products they are looking for via the footer.
+- **Contact Us**: The store address, telephone number and email address are displayed on all pages so the user is able to contact the store directly very easily.
+- **Contact Us**: Social media links are displayed for users who wish to follow the store on social media via Facebook, Instagram and/or YouTube.
+
+<br>
+
+**Messages**
+
+![Messages](docs/features/all_pages/messages.png)
+
+- This box appears when a message is sent to the user to inform them about a successful or unsuccessful action they have taken on the website.
+- **Success message**: This message appears when the user has successfully completed an action including adding an item to their shopping bag, placing an order, submitting a contact form enquiry and logging in/out. If the user has items in their shopping bag, they will also see a link to procees to the checkout. In addition, if they haven't spent enough to qualify for free delivery, they are informed about how much more they need to spend to reach the threshold.
+- **Warning message**: This message appears when the user needs to be warned about an action they have taken on the site.
+- **Info message**: This message appears when the user needs to be given information about an action they have taken on the site.
+- **Error message**: This message appears when the user needs to be informed of an error with an action they have taken.
+
+### **Other Features**
+
+**Home Page**
+
+![Home hero section](docs/features/other/home-hero-section.png)
+
+- This is the one of the first things the user will see when entering the site. The wording an image help the user to immediately understand the purpose of the website. A shop now button is included so the user can start shopping quickly and easily. This directs them to the all products page.
+
+<br>
+
+![Home categories section](docs/features/other/home-categories.png)
+
+- To give the user a more specific understanding of what the store offers, the categories are neatly displayed next so the user can immediately start shopping by category if they know what area of their home they wish to buy for.
+
+**Products page**
+
+![Products page](docs/features/other/products-page.png)
+
+- **Sorting**: Users are able to sort products on any products page using various parameters. If sorting by rating, products with a rating are shown first, with all products without a current rating following behind.
+- **Product layout**: On larger devices the site makes the most of the width showing 4 products in a single row. The amount of products in a single row reduces as the screen/device becomes smaller. Even on small devices, two products sit on a single row to stop the user from having to scroll down very far to see all products on the page. All details can be clearly seen even with two products in a single row.
+- **Rating**: The product rating (if any) is calculated based as an average of all review ratings submitted for that product.
+- **Link to product**: When hovering over the product, the name and price are underlined to offer a better product browsing experience to the user. They can access the product detail page for the product they wish to view by clicking anywhere within the product card container.
+
+**Product detail page**
+
+![Product detail page](docs/features/other/product-detail.png)
+
+- **Image**: The product image can be enlarged by clicking on it.
+- **Price**: The product price is very important and is clearly shown so the user can decide if they can afford to purchase the item.
+- **Category**: The category which the product belongs to is displayed with a relevant icon.
+- **Rating**: The product rating (if any) is also displayed for the user here as well as on the products page.
+- **Description**: The product description provides more details about the product being views should the user want more details that aren't provided in the product name.
+- **Quantity select**: The user is able to select a quantity for any product provided the value is between 1 and 99. The buttons provided to the user automatically stop them from entering a value outside of this range. If the user manually types in a value which is outside of this value and attempts to add the product to the shopping bag, they will be told to enter a value within the 1-99 range. In addition, if the user already has a given quantity of the same product in their shopping bag and attempts to add a further quantity via the product detail page which brings the shopping bag quantity above 99, they are informed that the shopping bag quantity has been set to the max value allowed of 99.
+- **Buttons**: The user can go back to the products page with the keep shopping button, or add the product to their shopping bag with the add to bag button. Using the add to bag button will trigger a message to let the user know what the outcome of their action was.
+
+
+
 
 ## **Future Enhancements**
 

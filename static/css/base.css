@@ -348,6 +348,7 @@ p {
 .accordion {
     --bs-accordion-border-radius: none;
     --bs-accordion-inner-border-radius: none;
+    --bs-accordion-border-color: #415A77;
 }
 
 .accordion-button:not(.collapsed),

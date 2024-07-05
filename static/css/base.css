@@ -495,7 +495,8 @@ p {
 
 .extra-form-label-styling:focus,
 .extra-form-label-styling-tall:focus,
-.extra-form-label-styling-rating:focus {
+.extra-form-label-styling-rating:focus,
+.form-control:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid #0D1B2A;

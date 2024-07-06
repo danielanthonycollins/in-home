@@ -6,7 +6,7 @@
     </a>
 </div>
 <ul class="d-block d-lg-none" id="mobile-top-header">
-    <div class="d-flex justify-content-between align-items-center w-100">
+    <li class="d-flex justify-content-between align-items-center w-100">
         <div class="d-flex">
             <!-- Search button with search bar in dropdown -->
             <div class="list-inline-item ms-1">
@@ -21,10 +21,10 @@
                     <form class="form" method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input class="form-control extra-form-label-styling" type="text" name="q"
-                                placeholder="Search our site">
+                                placeholder="Search our site" aria-label="Search bar">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-black rounded-0" type="submit">
-                                    <span class="icon">
+                                <button class="form-control btn btn-black rounded-0" type="submit" aria-label="Submit search">
+                                    <span class="icon" aria-hidden="true">
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </button>
@@ -35,14 +35,14 @@
             </div>
             <!-- My account button with dropdown options -->
             <div class="list-inline-item ms-1">
-                <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link" href="#" id="user-mobile-options" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <div class="text-center">
                         <i class="fas fa-user fa-lg"></i>
                         <div class="my-0">My Account</div>
                     </div>
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                <div class="dropdown-menu border-0" aria-labelledby="user-mobile-options">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
@@ -71,5 +71,5 @@
                 </a>
             </div>
         </div>
-    </div>
+    </li>
 </ul>

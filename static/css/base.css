@@ -190,7 +190,8 @@ p {
 
 .footer-quick-link:hover,
 .footer-email:hover,
-.footer-social-links:hover {
+.footer-social-links:hover,
+.footer-tel:hover {
     color: #d5d5d5;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -212,6 +213,7 @@ p {
     --bs-btn-border-color: none;
     --bs-btn-hover-bg: #070f17;
     --bs-btn-hover-border-color: none;
+    --bs-btn-active-bg: #070f17;
 }
 
 .btn-checkout-primary {

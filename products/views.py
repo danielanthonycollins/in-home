@@ -44,7 +44,7 @@ def all_products(request):
 
         # Handle category filtering
         if 'category' in request.GET:
-            categories = request.GET.getlist('category')
+            categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 

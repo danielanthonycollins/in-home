@@ -588,6 +588,16 @@ I found the following bugs during the development process:
   - Cause: The 'appearance' property was being overwriten due to other classes taken priority from earlier stages of developmemt.
   - Solution: Added 'appearance: menulist' to 'extra-form-label-styling' class in base.css and also to 'form-control' in checkout.css
 
+- Shop full range
+  - Problem: Shop full range buttons within the category dropdowns in the main nav take the user to an empty page.
+  - Cause: The way the category filter is being handled. request.GET.getlist('category') isn't splitting the comma-separated values into a list, which is what getlist expects.
+  - Solution: Changed the relevant line in views.py to:
+  ```
+  categories = request.GET['category'].split(',')
+  ```
+
+
+
 ---
 
 ## **Deployment**

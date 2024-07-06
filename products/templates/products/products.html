@@ -75,7 +75,7 @@
           </a>
           <!-- Product category (separate link) -->
           {% if product.category %}
-          <span class="mt-1">
+          <span class="mt-1"><small>
           <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
             {% if product.category.name|in_category:"cooking,kettles,cutlery" %}
             <i class="fa-solid fa-utensils me-1 category-icon"></i>{{ product.category.friendly_name }}
@@ -87,6 +87,7 @@
             <i class="fa-solid fa-bath me-1 category-icon"></i>{{ product.category.friendly_name }}
             {% endif %}
           </a>
+        </small>
         </span>
           {% endif %}
         </div>

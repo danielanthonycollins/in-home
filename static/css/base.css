@@ -478,7 +478,6 @@ p {
 .allauth-form-inner-content input[type='submit']:hover {
     color: #fff;
     background-color: #0D1B2A;
-    border-color: none;
 }
 
 /* Forms */

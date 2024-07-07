@@ -68,7 +68,6 @@
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Product Info</th>
-                            <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
@@ -126,14 +125,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');

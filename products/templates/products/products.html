@@ -118,14 +118,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
   // Scroll to top when back to top button is clicked
   $('.btt-link').click(function (e) {
     window.scrollTo(0, 0);
   });
 </script>
 
-<script type="text/javascript">
+<script>
   // Update URL When the sort selector changes
   $('#sort-selector').change(function () {
     var selector = $(this);

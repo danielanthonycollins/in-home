@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 from .models import Product, Category, Review
 from .forms import ProductForm
 
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -29,7 +30,7 @@ def all_products(request):
                 products = products.order_by(sort_by)
             elif sortkey == 'rating':
                 # Sort by rating (with products without ratings at the end)
-                direction = request.GET.get('direction', 'desc')  # Default to descending order for rating
+                direction = request.GET.get('direction', 'desc')
                 products = sort_by_rating(products, direction)
             elif sortkey == 'name':
                 # Sort by product name
@@ -39,7 +40,11 @@ def all_products(request):
             elif sortkey == 'category':
                 # Sort by category name
                 direction = request.GET.get('direction', 'asc')
-                sort_by = 'category__name' if direction == 'asc' else '-category__name'
+                sort_by = (
+                    'category__name'
+                    if direction == 'asc'
+                    else '-category__name'
+                )
                 products = products.order_by(sort_by)
 
         # Handle category filtering
@@ -52,7 +57,9 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if query:
-                products = products.filter(Q(name__icontains=query) | Q(description__icontains=query))
+                products = products.filter(
+                    Q(name__icontains=query) | Q(description__icontains=query)
+                )
 
     current_sorting = f'{sort}_{direction}' if sort and direction else None
 
@@ -73,10 +80,16 @@ def sort_by_rating(products, direction):
     while products without ratings are placed at the end.
     """
     if direction == 'asc':
-        products = products.annotate(avg_rating=Avg('reviews__rating')).order_by(F('avg_rating').asc(nulls_last=True))
+        products = products.annotate(
+            avg_rating=Avg('reviews__rating')).order_by(F('avg_rating').asc(
+                nulls_last=True)
+        )
     else:
-        products = products.annotate(avg_rating=Avg('reviews__rating')).order_by(F('avg_rating').desc(nulls_last=True))
-    
+        products = products.annotate(
+            avg_rating=Avg('reviews__rating')).order_by(F('avg_rating').desc(
+                nulls_last=True)
+        )
+
     return products
 
 

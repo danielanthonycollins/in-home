@@ -285,7 +285,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 **Shopping bag**
 
-![Shopping bag](docs/features/other/shopping-bag.png)
+![Shopping bag](docs/features/other/shopping-bag-2.png)
 
 - The shopping bag page contains the items the user has added to their bag while browsing the site. If no items have been added, a message appears to tell the user the bag is empty and shows a button to go back and keep shopping.
 - **Quantity / Update**: The user is able to increase and decrease the quantity of any particular item in their shopping bag and update the total using the update button. There are checks/validation in place to stop the user from generating a quantity less than 1 or greater than 99. If they try to bypass this, they are shown a message to inform them that the quantity has been set to the nearest possible quantity to their original entry attempt.

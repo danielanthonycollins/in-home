@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="mb-4 mt-4">Checkout</h2>
+            <h1 class="mb-4 mt-4 heading-2">Checkout</h1>
             <hr>
         </div>
     </div>
@@ -74,21 +74,44 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small px-2 w-auto">Details</legend>
-                    <div class="form-field">{{ order_form.full_name | as_crispy_field }}</div>
-                    {{ order_form.email | as_crispy_field }}
-                </fieldset>
-                <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small px-2 w-auto">Delivery</legend>
-                    <div class="form-field">{{ order_form.phone_number | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.street_address1 | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.street_address2 | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.town_or_city | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.county | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.postcode | as_crispy_field }}</div>
-                    <div class="form-field">{{ order_form.country | as_crispy_field }}</div>
+                    <div class="form-field">
+                        {{ order_form.full_name|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.email|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.phone_number|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.street_address1|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.street_address2|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.town_or_city|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.county|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.postcode|as_crispy_field }}
+                    </div>
+                    <div class="form-field">
+
+                        {{ order_form.country|as_crispy_field }}
+                    </div>
 
                     <!-- Login/create an account -->
-                    <div class="form-check form-check-inline float-end mr-0">
+                    <div class="form-check float-end mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
                             profile</label>
@@ -97,7 +120,8 @@
                         {% else %}
                         <div class="form-check-label">
                             <a class="text-decoration-none" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-decoration-none" href="{% url 'account_login' %}">login</a> to save this information
+                            <a class="text-decoration-none" href="{% url 'account_login' %}">login</a> to save this
+                            information
                         </div>
                         {% endif %}
                     </div>
@@ -141,11 +165,11 @@
 
 <!-- Loading spinner -->
 <div id="loading-overlay">
-    <h1 class="loading-spinner">
+    <p class="loading-spinner heading-1">
         <span>
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
         </span>
-    </h1>
+    </p>
 </div>
 {% endblock %}
 

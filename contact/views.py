@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from .forms import ContactForm
 
+
 def contact(request):
     """
     Handles the contact form submission.
@@ -18,15 +19,19 @@ def contact(request):
                 'subject': form.cleaned_data['subject'],
                 'enquiry': form.cleaned_data['enquiry'],
             }
-            body_string = '\n'.join([f"{key}: {value}" for key, value in body.items()])
+            body_string = '\n'.join(
+                [f"{key}: {value}" for key, value in body.items()]
+            )
 
             # Show success message to user
-            messages.success(request, 'Thank you! Your enquiry has been submitted successfully!')
+            messages.success(request, 'Thank you!'
+                             ' Your enquiry has been submitted successfully!')
             # Send the email to store owner with the enquiry details
-            send_mail(subject, body_string, 'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
+            send_mail(subject, body_string,
+                      'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
             # Render the home page after successful submission
             return render(request, 'home/index.html')
 
     # Render the contact form if the form is invalid
     form = ContactForm()
-    return render(request, 'contact/contact.html', {'form':form})
+    return render(request, 'contact/contact.html', {'form': form})

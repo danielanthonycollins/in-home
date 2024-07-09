@@ -1,6 +1,7 @@
 from django import forms
 from .models import Contact
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         # Define the model and fields for the form
@@ -13,7 +14,11 @@ class ContactForm(forms.ModelForm):
         for field in self.fields:
             if field == 'enquiry':
                 # Add specific CSS class for the enquiry field
-                self.fields[field].widget.attrs['class'] = 'extra-form-label-styling-tall'
+                self.fields[field].widget.attrs['class'] = (
+                    'extra-form-label-styling-tall'
+                )
             else:
                 # Add general CSS class for the rest
-                self.fields[field].widget.attrs['class'] = 'extra-form-label-styling'
+                self.fields[field].widget.attrs['class'] = (
+                    'extra-form-label-styling'
+                )

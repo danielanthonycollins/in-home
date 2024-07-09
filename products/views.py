@@ -100,10 +100,11 @@ def product_detail(request, product_id):
 
     # Handle review deletion or submission
     if request.method == 'POST':
-        if 'delete_review' in request.POST and request.POST.get('delete_review') == "true":
+        if ('delete_review' in request.POST and
+                request.POST.get('delete_review') == "true"):
             return handle_review_deletion(request, product)
-        else:
-            handle_review_submission(request, product)
+    else:
+        handle_review_submission(request, product)
 
     reviews = Review.objects.filter(product=product)
 
@@ -156,7 +157,8 @@ def handle_review_deletion(request, product):
         messages.success(request, 'Review was successfully deleted.')
     else:
         # Error message if no persmission is granted
-        messages.error(request, 'You do not have permission to delete this review.')
+        messages.error(request,
+                       'You do not have permission to delete this review.')
 
     # Redirect back to the product detail page
     return redirect(reverse('product_detail', args=[product.id]))
@@ -182,7 +184,8 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             # Error message if form data is not valid
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add product. Check the form is valid.')
     else:
         form = ProductForm()
 
@@ -215,7 +218,8 @@ def edit_product(request, product_id):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             # Error message if form data is not valid
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update product. Ensure form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

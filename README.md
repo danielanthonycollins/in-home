@@ -85,7 +85,7 @@ In Home is an online e-commerce store selling all different types of homeware. U
 
 - Offer a simple and responsive e-commerce store where users can purchase homeware items quickly and easily.
 - Offer the ability to register an account, allowing the user to see their previous order history, manage personal information and leave reviews for products they have purchased.
-- To keep the user informed as they nagivate the store, providing confirmation of successful actions taking and warning them when something hasn't worked the way they would expect.
+- To keep the user informed as they navigate the store, providing confirmation of successful actions taking and warning them when something hasn't worked the way they would expect.
 - To allow the user the ability to message the store via a contact form if they need help or advice.
 
 ### **Database Schema**
@@ -179,7 +179,7 @@ The [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-check
 
 I decided to import and use the Outfit font using Google Fonts for the store, with Helvetica and sans-serif acting as the back up fonts should the Outfit import fail.
 
-I wanted to choose a font which wasn't mainstream and unique, but also smart and representative of the profesional yet fun nature of the store. It worked well with lowercase and uppercase letters, special characters and numbers when tested on the Google platform prior to importing.
+I wanted to choose a font which wasn't mainstream and unique, but also smart and representative of the professional yet fun nature of the store. It worked well with lowercase and uppercase letters, special characters and numbers when tested on the Google platform prior to importing.
 
 ## **Features**
 
@@ -223,7 +223,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 ![Messages](docs/features/all_pages/messages.png)
 
 - This box appears when a message is sent to the user to inform them about a successful or unsuccessful action they have taken on the website.
-- **Success message**: This message appears when the user has successfully completed an action including adding an item to their shopping bag, placing an order, submitting a contact form enquiry and logging in/out. If the user has items in their shopping bag, they will also see a link to procees to the checkout. In addition, if they haven't spent enough to qualify for free delivery, they are informed about how much more they need to spend to reach the threshold.
+- **Success message**: This message appears when the user has successfully completed an action including adding an item to their shopping bag, placing an order, submitting a contact form enquiry and logging in/out. If the user has items in their shopping bag, they will also see a link to advance to the checkout. In addition, if they haven't spent enough to qualify for free delivery, they are informed about how much more they need to spend to reach the threshold.
 - **Warning message**: This message appears when the user needs to be warned about an action they have taken on the site.
 - **Info message**: This message appears when the user needs to be given information about an action they have taken on the site.
 - **Error message**: This message appears when the user needs to be informed of an error with an action they have taken.
@@ -298,7 +298,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 - The checkout form contains all of the required details needed from the user to process their order. Including their full name, email address and delivery information.
 - **Save info**: A checkbox is included giving the user the option to save their information to their profile. If they opt for this, the next time they place an order, their details are automatically pre-filled. They can update this information on their profile page if they wish. If the user is not logged in, they are shown a message prompting them to login or register to save their information.
-- **Stripe**: The store uses stripe to process it's payments. Once the complete order button is clicked, a loading spinner is displayed until the order is processed successfuly, which aims to prevent the user from exiting the checkout while the store processes their payment. The user is shown a small warning message to let them know how much their card will be charged.
+- **Stripe**: The store uses stripe to process it's payments. Once the complete order button is clicked, a loading spinner is displayed until the order is processed successfully, which aims to prevent the user from exiting the checkout while the store processes their payment. The user is shown a small warning message to let them know how much their card will be charged.
 
 <br>
 
@@ -319,7 +319,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 ![Checkout success message](docs/features/other/checkout-success.png)
 
-- In addition to the order confirmation provided above, and the email the user received, they are also shown a success message in the top right hand corner just to give them the extra confidence that their order was successfuly submitted.
+- In addition to the order confirmation provided above, and the email the user received, they are also shown a success message in the top right hand corner just to give them the extra confidence that their order was successfully submitted.
 
 **Login page**
 
@@ -337,7 +337,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 ![Password reset page](docs/features/other/password-reset.png)
 
-- This page allows the user to reset their password if they have forgotton it, so the user doesn't have to sign up for another account if they've just forgotton their password.
+- This page allows the user to reset their password if they have forgotten it, so the user doesn't have to sign up for another account if they've just forgotten their password.
 
 **Change password page**
 
@@ -371,7 +371,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 ![Contact page](docs/features/other/contact-page.png)
 
 - The contact page is where the user can find multiple ways of contacting the store.
-- **Contact form**: The contact form allows the user a way of submitting a message to the store for a response. It requies a name, email, subject and enquiry message and once submitted, the form is sent to the In Home team's email address so they can assist the customer.
+- **Contact form**: The contact form allows the user a way of submitting a message to the store for a response. It requires a name, email, subject and enquiry message and once submitted, the form is sent to the In Home team's email address so they can assist the customer.
 - **Contact details**: The contact page also features the company contact details, in case the user wishes to contact the store directly.
 
 ## **Future Enhancements**
@@ -383,7 +383,7 @@ Some possible enhancements which could be applied in the future include:
 - A social account login feature, so the user can login to the website using their social media account rather than an email
 - A special offers section for any discounted products or special deals available
 - A 'You may also like...' section at the bottom of each product which shows products the user may be interested in based on what they are currently viewing
-- A 'Suggested for you' section on the users profile page which suggests products they may wish to purchase based on thier previous order history
+- A 'Suggested for you' section on the users profile page which suggests products they may wish to purchase based on their previous order history
 - A newsletter signup, so the store can market their products and special offers directly to interested users.
 
 ## **Testing Phase**
@@ -437,7 +437,7 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 | Living Room Nav Link                                 | On click, dropdown appears with relevant options, all linking to their relevant pages.                                                                 | Yes   |
 | Bedroom Nav Link                                     | On click, dropdown appears with relevant options, all linking to their relevant pages.                                                                 | Yes   |
 | Bathroom Nav Link                                    | On click, dropdown appears with relevant options, all linking to their relevant pages.                                                                 | Yes   |
-| Contact Nav Link                                     | On click, tkes user to the contact page.                                                                                                               | Yes   |
+| Contact Nav Link                                     | On click, takes user to the contact page.                                                                                                               | Yes   |
 | **Footer**                                               |                                                                                                                                                       |       |
 | Quick Links                                          | On click, each link takes the user to the relevant page.                                                                                               | Yes   |
 | Telephone Number                                     | On click, the site attempts to start a phone call direct to the store.                                                                                  | Yes   |
@@ -461,7 +461,7 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 | Products (search query)                              | When user is taken to the products page from a search query, page confirms how many products were found based on their search criteria.                 | Yes   |
 | **Product Detail Page**                                  |                                                                                                                                                       |       |
 | Image                                                | On click, image opens in a new tab                                                                                                                     | Yes   |
-| Category                                             | On click, user is sirected to the category in which the product belongs to                                                                             | Yes   |
+| Category                                             | On click, user is directed to the category in which the product belongs to                                                                             | Yes   |
 | Edit (superuser only)                                | When superuser is logged in, edit link is shown which directs superuser to the edit product page                                                       | Yes   |
 | Delete (superuser only)                              | When superuser is logged in, delete link is shown which prompts the delete product modal. The delete button deletes the product                        | Yes   |
 | Quantity Decrease (-)                                | On click, quantity is reduced by 1 (unless quantity is already 1, then decrease button is disabled)                                                    | Yes   |
@@ -515,7 +515,7 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 | **Login page**                                           |                                                                                                                                                       |       |
 | Signup link                                          | On click, directs user to sign up/register page                                                                                                        | Yes   |
 | Home button                                          | On click, directs user to the home page                                                                                                                | Yes   |
-| Sign in                                              | On click, if username/email and passoword match a users details stored in datebase, log the user in with success message                               | Yes   |
+| Sign in                                              | On click, if username/email and password match a users details stored in database, log the user in with success message                               | Yes   |
 | Forgot password                                      | On click, directs user to reset password page                                                                                                          | Yes   |
 | **Change password page**                                 |                                                                                                                                                       |       |
 | Back to login                                        | On click, directs user to login page                                                                                                                   | Yes   |
@@ -529,9 +529,9 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 | Select image                                         | On click, opens image select window on users device. When image is selected and confirmed, message appears to user to let them know what the image will be set to. | Yes   |
 | Cancel                                               | On click, direct user to all products page                                                                                                             | Yes   |
 | Add product                                          | On click, provided required fields are completed/entered, add new product to store                                                                     | Yes   |
-| Access                                               | If any user other than the superuser attempts to access the add product page, they are infomred they can't access it                                    | Yes   |
+| Access                                               | If any user other than the superuser attempts to access the add product page, they are informed they can't access it                                    | Yes   |
 | **Edit product page (superuser only)**                   |                                                                                                                                                       |       |
-| On load                                              | Info message to inform superuser what product they are editting                                                                                        | Yes   |
+| On load                                              | Info message to inform superuser what product they are editing                                                                                        | Yes   |
 | Pre-filled details                                   | Existing product details pre-filled in relevant fields                                                                                                 | Yes   |
 | Select image                                         | On click, opens image select window on users device. When image is selected and confirmed, message appears to user to let them know what the image will be set to. | Yes   |
 | Remove image                                         | On submit (update), if ticked, image is removed from the product                                                                                       | Yes   |
@@ -652,7 +652,7 @@ All python files were passed through the [CI Python Linter](https://pep8ci.herok
 
 **Lighthouse**
 
-Lighhouse scores were satisfactory, however the orange level of performace was caused by Heroku, Stripe, Bootstrap and a few other sources in which nothing further could be done to improve the scores.
+Lighthouse scores were satisfactory, however the orange level of performance was caused by Heroku, Stripe, Bootstrap and a few other sources in which nothing further could be done to improve the scores.
 
 Desktop Lighthouse Results
 
@@ -905,7 +905,7 @@ Mobile Lighthouse Results
 
 **User story 20**: As a registered user, I want to change my password
 
-**Achieved?**: Yes. Users can update their password via the profile page, or if they have forgotton it they can click the forgotton password link on the login page to reset it.
+**Achieved?**: Yes. Users can update their password via the profile page, or if they have forgotten it they can click the forgotten password link on the login page to reset it.
 
 **User story 21**: As a registered user, I want to make purchases without filling in my personal information each time
 
@@ -921,7 +921,7 @@ Mobile Lighthouse Results
 
 **User story 24**: As an admin, I want to update existing products
 
-**Achieved?**: Yes. Admin users are able to update existing products via the 'Edit' button found on the product details page for the product to be editted.
+**Achieved?**: Yes. Admin users are able to update existing products via the 'Edit' button found on the product details page for the product to be edited.
 
 **User story 25**: As an admin, I want to delete existing products
 
@@ -942,7 +942,7 @@ I found the following bugs during the development process:
 
 - Dropdown with no arrow
   - Problem: Country inputs on profile and checkout page, plus the category choice on add and edit product page do not include an arrow to show they are a dropdown.
-  - Cause: The 'appearance' property was being overwriten due to other classes taken priority from earlier stages of developmemt.
+  - Cause: The 'appearance' property was being overwritten due to other classes taken priority from earlier stages of development.
   - Solution: Added 'appearance: menulist' to 'extra-form-label-styling' class in base.css and also to 'form-control' in checkout.css
 
 - Shop full range

@@ -549,22 +549,57 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 
 **HTML Validators**
 
-<details>
-<summary>Home Page</summary>
-<br>
-<img alt="" src="">
-</details>
-<br>
+The following files were passed through the [W3C HTML Validator](https://validator.w3.org/) and passed with no errors. Please note, to test each file, the complete HTML via the page source on the front end of each page was passed through the direct input section of the validator, thus avoiding errors due to the django statements.
+
+| File                       | Pass?  |
+|----------------------------|--------|
+| bag-total.html              | Yes    |
+| bag.html              | Yes    |
+| checkout-buttons.html               | Yes    |
+| checkout_success.html               | Yes    |
+| checkout.html               | Yes    |
+| contact.html               | Yes    |
+| index.html               | Yes    |
+| quantity_input_script.html               | Yes    |
+| add_product.html              | Yes    |
+| edit_product.html               | Yes    |
+| product_detail.html              | Yes    |
+| products.html               | Yes    |
+| profile.html               | Yes    |
+| toast_error.html              | Yes    |
+| toast_info.html              | Yes    |
+| toast_success.html             | Yes    |
+| toast_warning.html              | Yes    |
+| footer.html              | Yes    |
+| main-nav.html              | Yes    |
+| mobile-top-header.html              | Yes    |
+| 404.html              | Yes    |
+| 500.html              | Yes    |
+| base.html              | Yes    |
+| signup.html              | Yes    |
+| login.html              | Yes    |
+| password_change.html              | Yes    |
+| password_reset.html              | Yes    |
 
 **CSS Validator**
 
+The following files were passed through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and passed with no errors.
 
+| File                       | Pass?  |
+|----------------------------|--------|
+| checkout.css               | Yes    |
+| profile.css                | Yes    |
+| base.css                   | Yes    |
 
-**JS Hint**
+**JSHint**
 
+The stripe elements JS file used in the checkout app was passed through [JSHint](https://jshint.com/) with no errors.
 
+![Stripe Elements JSHint Results](docs/jshint/stripelementsjshint.png)
 
 **CI Python Linter**
+
+All python files were passed through the [CI Python Linter](https://pep8ci.herokuapp.com/) and all passed with no errors found.
 
 | App                      | File                       | Pass?  |
 |--------------------------|----------------------------|--------|
@@ -704,6 +739,7 @@ Desktop Lighthouse Results
 <br>
 <img alt="Register Page Desktop Lighthouse Results" src="docs/lighthouse/signupdesktoplh.png">
 </details>
+<br>
 
 Mobile Lighthouse Results
 

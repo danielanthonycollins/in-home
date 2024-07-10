@@ -33,7 +33,6 @@ In Home is an online e-commerce store selling all different types of homeware. U
 - [**Tech**](#tech)
 - [**Credits**](#credits)
   - [**Honourable mentions**](#honourable-mentions)
-  - [**Content**](#content)
   - [**Media**](#media)
 
 ## **Planning stage**
@@ -395,15 +394,15 @@ Responsiveness was checked and worked as intended with the following browsers an
 
 - Extra Large (27" Mac Desktop):
 
-  - Chrome (Version )
-  - Safari (Version )
-  - Firefox (Version )
+  - Chrome
+  - Safari
+  - Firefox
 
 - Large (15" MacBook Pro Laptop):
 
-  - Chrome (Version )
-  - Firefox (Version )
-  - Safari (Version )
+  - Chrome
+  - Firefox
+  - Safari
 
 - Medium (10.9" iPad):
 
@@ -413,9 +412,9 @@ Responsiveness was checked and worked as intended with the following browsers an
 
 - Small (6" iPhone 13):
 
-  - Chrome (Version )
+  - Chrome
   - Safari
-  - Firefox (Version )
+  - Firefox
 
 DevTools was also used to check the responsiveness at various screen sizes and devices from the list of devices available. All were fully responsive and caused no issues, including the smallest device available in the list which was a Galaxy Z Fold 5.
 
@@ -941,11 +940,6 @@ I found the following bugs during the development process:
   - Cause: Jquery doesn't recognise the toast() function based on the Bootstrap version being used
   - Solution: Replaced it with vanilla javascript which worked with the Bootstrap version being used
 
-- Sort by rating
-  - Problem: When choosing to sort by high to low rating, the order is not correct and highest rated products are not showing first
-  - Cause: 
-  - Solution: 
-
 - Dropdown with no arrow
   - Problem: Country inputs on profile and checkout page, plus the category choice on add and edit product page do not include an arrow to show they are a dropdown.
   - Cause: The 'appearance' property was being overwriten due to other classes taken priority from earlier stages of developmemt.
@@ -959,8 +953,6 @@ I found the following bugs during the development process:
   categories = request.GET['category'].split(',')
   ```
 
-
-
 ---
 
 ## **Deployment**
@@ -971,7 +963,7 @@ To deploy this Django project, follow the steps below.
 
 Ensure you have the following:
 
-- Python 3.12.2
+- Python
 - Git
 - Heroku account
 - Amazon Web Services (AWS) account
@@ -1044,7 +1036,6 @@ Ensure you have the following:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
     ```
-
 
 ### **Setting Up Stripe**
 
@@ -1166,10 +1157,6 @@ The following people, websites and learning materials aided me with the creation
 ### **Honourable mentions**
 
 Special thanks to my mentor Richard Wells for his excellent advice and support throughout this project.
-
-### **Content**
-
-
 
 ### **Media**
 

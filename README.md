@@ -566,7 +566,55 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 
 **CI Python Linter**
 
-
+| App                      | File                       | Pass?  |
+|--------------------------|----------------------------|--------|
+| bag > templatetags              | bag_tools                | Yes    |
+| bag              | admin                | Yes    |
+| bag              | apps                | Yes    |
+| bag              | contexts                | Yes    |
+| bag              | models                | Yes    |
+| bag              | urls                | Yes    |
+| bag              | views                | Yes    |
+| checkout              | admin                | Yes    |
+| checkout              | apps                | Yes    |
+| checkout              | forms                | Yes    |
+| checkout              | models                | Yes    |
+| checkout              | signals                | Yes    |
+| checkout              | urls                | Yes    |
+| checkout              | views                | Yes    |
+| checkout              | webhook_handler                | Yes    |
+| checkout              | webhooks                | Yes    |
+| contact              | admin                | Yes    |
+| contact              | apps                | Yes    |
+| contact              | forms                | Yes    |
+| contact              | models                | Yes    |
+| contact              | urls                | Yes    |
+| contact              | views                | Yes    |
+| home              | admin                | Yes    |
+| home              | apps                | Yes    |
+| home              | models                | Yes    |
+| home              | urls                | Yes    |
+| home              | views                | Yes    |
+| in_home              | asgi                | Yes    |
+| in_home              | settings                | Yes    |
+| in_home              | urls                | Yes    |
+| in_home              | wsgi                | Yes    |
+| products > templatetags              | custom_filters                | Yes    |
+| products              | admin                | Yes    |
+| products              | apps                | Yes    |
+| products              | forms                | Yes    |
+| products              | models                | Yes    |
+| products              | urls                | Yes    |
+| products              | views                | Yes    |
+| products              | widgets                | Yes    |
+| profiles              | admin                | Yes    |
+| profiles              | apps                | Yes    |
+| profiles              | forms                | Yes    |
+| profiles              | models                | Yes    |
+| profiles              | urls                | Yes    |
+| profiles              | views                | Yes    |
+| custom_storages              | custom_storages                | Yes    |
+| manage             | manage                | Yes    |
 
 **Lighthouse**
 

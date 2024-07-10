@@ -27,7 +27,6 @@ In Home is an online e-commerce store selling all different types of homeware. U
   - [**Responsiveness**](#responsiveness)
   - [**Functionality**](#functionality)
   - [**Validators**](#validators)
-  - [**Lighthouse**](#lighthouse)
   - [**Testing user stories**](#testing-user-stories)
 - [**Bugs**](#bugs)
 - [**Deployment**](#deployment)
@@ -569,9 +568,179 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 
 
 
-### **Lighthouse**
+**Lighthouse**
 
+Lighhouse scores were satisfactory, however the orange level of performace was caused by Heroku, Stripe, Bootstrap and a few other sources in which nothing further could be done to improve the scores.
 
+Desktop Lighthouse Results
+
+<details>
+<summary>Home Page</summary>
+<br>
+<img alt="Home Page Desktop Lighthouse Results" src="docs/lighthouse/homedesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Products Page</summary>
+<br>
+<img alt="Products Page Desktop Lighthouse Results" src="docs/lighthouse/productsdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Product Detail Page</summary>
+<br>
+<img alt="Product Detail Page Desktop Lighthouse Results" src="docs/lighthouse/productdetaildesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Shopping Bag Page</summary>
+<br>
+<img alt="Shopping Bag Page Desktop Lighthouse Results" src="docs/lighthouse/bagdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Checkout Page</summary>
+<br>
+<img alt="Checkout Page Desktop Lighthouse Results" src="docs/lighthouse/checkoutdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Order Confirmation Page</summary>
+<br>
+<img alt="Order Confirmation Page Desktop Lighthouse Results" src="docs/lighthouse/orderconfirmationdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Contact Page</summary>
+<br>
+<img alt="Contact Page Desktop Lighthouse Results" src="docs/lighthouse/contactdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Add Product Page</summary>
+<br>
+<img alt="Add Product Page Desktop Lighthouse Results" src="docs/lighthouse/addproductdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Edit Product Page</summary>
+<br>
+<img alt="Edit Product Page Desktop Lighthouse Results" src="docs/lighthouse/editproductdesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Profile Page</summary>
+<br>
+<img alt="Profile Page Desktop Lighthouse Results" src="docs/lighthouse/profiledesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Login Page</summary>
+<br>
+<img alt="Login Page Desktop Lighthouse Results" src="docs/lighthouse/signindesktoplh.png">
+</details>
+<br>
+
+<details>
+<summary>Register Page</summary>
+<br>
+<img alt="Register Page Desktop Lighthouse Results" src="docs/lighthouse/signupdesktoplh.png">
+</details>
+
+Mobile Lighthouse Results
+
+<details>
+<summary>Home Page</summary>
+<br>
+<img alt="Home Page Mobile Lighthouse Results" src="docs/lighthouse/homemobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Products Page</summary>
+<br>
+<img alt="Products Page Mobile Lighthouse Results" src="docs/lighthouse/productsmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Product Detail Page</summary>
+<br>
+<img alt="Product Detail Page Mobile Lighthouse Results" src="docs/lighthouse/productdetailmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Shopping Bag Page</summary>
+<br>
+<img alt="Shopping Bag Page Mobile Lighthouse Results" src="docs/lighthouse/bagmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Checkout Page</summary>
+<br>
+<img alt="Checkout Page Mobile Lighthouse Results" src="docs/lighthouse/checkoutmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Order Confirmation Page</summary>
+<br>
+<img alt="Order Confirmation Page Mobile Lighthouse Results" src="docs/lighthouse/orderconfirmationmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Contact Page</summary>
+<br>
+<img alt="Contact Page Mobile Lighthouse Results" src="docs/lighthouse/contactmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Add Product Page</summary>
+<br>
+<img alt="Add Product Page Mobile Lighthouse Results" src="docs/lighthouse/addproductmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Edit Product Page</summary>
+<br>
+<img alt="Edit Product Page Mobile Lighthouse Results" src="docs/lighthouse/editproductmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Profile Page</summary>
+<br>
+<img alt="Profile Page Mobile Lighthouse Results" src="docs/lighthouse/profilemobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Login Page</summary>
+<br>
+<img alt="Login Page Mobile Lighthouse Results" src="docs/lighthouse/signinmobilelh.png">
+</details>
+<br>
+
+<details>
+<summary>Register Page</summary>
+<br>
+<img alt="Register Page Mobile Lighthouse Results" src="docs/lighthouse/signupmobilelh.png">
+</details>
 
 ### **Testing user stories**
 

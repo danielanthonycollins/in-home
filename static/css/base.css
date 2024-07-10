@@ -256,7 +256,7 @@ p {
 /* Home Page */
 
 .home-background {
-    background: url(../../media/pexels-almapapi-2396108.jpg);
+    background: url(../../media/homemainimagenew.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -282,19 +282,19 @@ p {
 }
 
 .kitchen-category {
-    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-heyho-6301168.jpg');
+    background-image: url(../../media/homekitchenimagenew.webp);
 }
 
 .living-room-category {
-    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-heyho-6316067.jpg');
+    background-image: url(../../media/homelivingroomimagenew.webp);
 }
 
 .bedroom-category {
-    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-naimbic-2029698.jpg');
+    background-image: url(../../media/homebedroomimagenew.webp);
 }
 
 .bathroom-category {
-    background-image: url('https://in-home.s3.eu-north-1.amazonaws.com/media/pexels-julieaagaard-2207894.jpg');
+    background-image: url(../../media/homebathroomimagenew.webp);
 }
 
 .category-button {

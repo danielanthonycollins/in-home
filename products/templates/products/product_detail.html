@@ -185,7 +185,7 @@
             <!-- Reviews accordion -->
             <div class="accordion" id="reviews-accordion">
                 {% for review in reviews %}
-                <div class="accordion-item">
+                <div class="accordion-item mb-1">
                     <h3 class="accordion-header heading-2">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse{{ review.id }}" aria-expanded="true"
@@ -202,17 +202,18 @@
                             <!-- Show delete review button for user it belongs to and superuser -->
                             {% if review.submitted_by == request.user or request.user.is_superuser %}
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteReviewModal">
+                                data-bs-target="#deleteReviewModal{{ review.id }}">
                                 Delete Review
                             </button>
 
                             <!-- Delete review modal -->
-                            <div class="modal fade" id="deleteReviewModal" tabindex="-1"
-                                aria-labelledby="deleteReviewModal" aria-hidden="true">
+                            <div class="modal fade" id="deleteReviewModal{{ review.id }}" tabindex="-1"
+                                aria-labelledby="deleteReviewModalLabel{{ review.id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Delete</h1>
+                                            <h1 class="modal-title fs-5" id="deleteReviewModalLabel{{ review.id }}">
+                                                Confirm Delete</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>

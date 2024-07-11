@@ -92,7 +92,7 @@ In Home is an online e-commerce store selling all different types of homeware. U
 
 Many thanks to [Draw SQL](https://drawsql.app/) for assisting me with my database schema. This really helped me to visualise how the tables would be set up and where each table connects.
 
-![Database Schema](docs/schema/sql-schema.png)
+![Database Schema](docs/schema/dbschemanew2.png)
 
 ### **Wireframes**
 
@@ -255,7 +255,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 ![Product detail page](docs/features/other/product-detail.png)
 
-- **Image**: The product image can be enlarged by clicking on it.
+- **Image**: On click, a new tab opens showing an enlarged version of the product image.
 - **Price**: The product price is very important and is clearly shown so the user can decide if they can afford to purchase the item.
 - **Category**: The category which the product belongs to is displayed with a relevant icon. If clicked, the user is taken to that category to view more products if they wish.
 - **Rating**: The product rating (if any) is also displayed for the user here as well as on the products page.
@@ -288,13 +288,14 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 - The shopping bag page contains the items the user has added to their bag while browsing the site. If no items have been added, a message appears to tell the user the bag is empty and shows a button to go back and keep shopping.
 - **Quantity / Update**: The user is able to increase and decrease the quantity of any particular item in their shopping bag and update the total using the update button. There are checks/validation in place to stop the user from generating a quantity less than 1 or greater than 99. If they try to bypass this, they are shown a message to inform them that the quantity has been set to the nearest possible quantity to their original entry attempt.
 - **Remove item**: Users are also able to remove items from the shopping bag completely, using the remove button.
-- **Product image**: The product image is a link to the product they click on, in case they want to go back to it. The subtotal for each product is automatically updated each time the user updates the quantity for that given item.
+- **Product image**: The product image is a link to the product they click on, in case they want to go back to it.
+- **Subtotal**: The subtotal for each product is automatically updated each time the user updates the quantity for that given item.
 - **Free delivery threshold**: If the user is below the £100 free delivery threshold, a small red message appears to let them know how much more they can spend to get free delivery.
 - **Buttons**: A button is included to keep shopping if the user wishes, otherwise they can proceed to the checkout.
 
 **Checkout**
 
-![Checkout form](docs/features/other/checkout-form.png)
+![Checkout form](docs/features/other/checkout-form-new.png)
 
 - The checkout form contains all of the required details needed from the user to process their order. Including their full name, email address and delivery information.
 - **Save info**: A checkbox is included giving the user the option to save their information to their profile. If they opt for this, the next time they place an order, their details are automatically pre-filled. They can update this information on their profile page if they wish. If the user is not logged in, they are shown a message prompting them to login or register to save their information.
@@ -385,6 +386,7 @@ Some possible enhancements which could be applied in the future include:
 - A 'You may also like...' section at the bottom of each product which shows products the user may be interested in based on what they are currently viewing
 - A 'Suggested for you' section on the users profile page which suggests products they may wish to purchase based on their previous order history
 - A newsletter signup, so the store can market their products and special offers directly to interested users.
+- Product images could be converted to WebP format to allow faster page loading
 
 ## **Testing Phase**
 
@@ -673,6 +675,8 @@ The errors were suggesting that the input fields on these pages did not include 
 
 Lighthouse scores were satisfactory, however the orange level of performance was caused by Heroku, Stripe, Bootstrap and a few other sources in which nothing further could be done to improve the scores.
 
+<br>
+
 Desktop Lighthouse Results
 
 <details>
@@ -757,6 +761,7 @@ Desktop Lighthouse Results
 <br>
 <img alt="Register Page Desktop Lighthouse Results" src="docs/lighthouse/signupdesktoplh.png">
 </details>
+<br>
 <br>
 
 Mobile Lighthouse Results

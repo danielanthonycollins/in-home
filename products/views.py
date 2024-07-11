@@ -103,8 +103,8 @@ def product_detail(request, product_id):
         if ('delete_review' in request.POST and
                 request.POST.get('delete_review') == "true"):
             return handle_review_deletion(request, product)
-    else:
-        handle_review_submission(request, product)
+        else:
+            handle_review_submission(request, product)
 
     reviews = Review.objects.filter(product=product)
 

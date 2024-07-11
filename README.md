@@ -969,6 +969,11 @@ I found the following bugs during the development process:
   - Cause: The 'appearance' property was being overwritten due to other classes taken priority from earlier stages of development.
   - Solution: Added 'appearance: menulist' to 'extra-form-label-styling' class in base.css and also to 'form-control' in checkout.css
 
+- Reviews not submitting
+  - Problem: When submitting a new review, the review is not submitting and therefore not appearing in the reviews accordion or the admin panel.
+  - Cause: Within the product_detail function in the products app views.py file, the else statement containing the handle_review_submission function was only being called if the request method was GET as it was acting as the else statement if the request method was not POST.
+  - Solution: Applied the correct indentation to the else statement so the handle_review_submission function is called when the request method is POST and the user is not trying to delete a review.
+
 - Shop full range
   - Problem: Shop full range buttons within the category dropdowns in the main nav take the user to an empty page.
   - Cause: The way the category filter is being handled. request.GET.getlist('category') isn't splitting the comma-separated values into a list, which is what getlist expects.

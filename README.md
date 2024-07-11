@@ -550,35 +550,35 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 
 The following files were passed through the [W3C HTML Validator](https://validator.w3.org/) and passed with no errors. Please note, to test each file, the complete HTML via the page source on the front end of each page was passed through the direct input section of the validator, thus avoiding errors due to the django statements.
 
-| File                       | Pass?  |
-|----------------------------|--------|
-| bag-total.html              | Yes    |
-| bag.html              | Yes    |
-| checkout-buttons.html               | Yes    |
-| checkout_success.html               | Yes    |
-| checkout.html               | Yes    |
-| contact.html               | Yes    |
-| index.html               | Yes    |
-| quantity_input_script.html               | Yes    |
-| add_product.html              | Yes    |
-| edit_product.html               | Yes    |
-| product_detail.html              | Yes    |
-| products.html               | Yes    |
-| profile.html               | Yes    |
-| toast_error.html              | Yes    |
+| File                         | Pass?  |
+|------------------------------|--------|
+| bag-total.html               | Yes    |
+| bag.html                     | Yes    |
+| checkout-buttons.html        | Yes    |
+| checkout_success.html        | Yes    |
+| checkout.html                | Yes    |
+| contact.html                 | Yes    |
+| index.html                   | Yes    |
+| quantity_input_script.html   | Yes    |
+| add_product.html             | Yes    |
+| edit_product.html            | Yes    |
+| product_detail.html          | Yes    |
+| products.html                | Yes    |
+| profile.html                 | Yes    |
+| toast_error.html             | Yes    |
 | toast_info.html              | Yes    |
-| toast_success.html             | Yes    |
-| toast_warning.html              | Yes    |
-| footer.html              | Yes    |
-| main-nav.html              | Yes    |
-| mobile-top-header.html              | Yes    |
-| 404.html              | Yes    |
-| 500.html              | Yes    |
-| base.html              | Yes    |
-| signup.html              | Yes    |
-| login.html              | Yes    |
-| password_change.html              | Yes    |
-| password_reset.html              | Yes    |
+| toast_success.html           | Yes    |
+| toast_warning.html           | Yes    |
+| footer.html                  | Yes    |
+| main-nav.html                | Yes    |
+| mobile-top-header.html       | Yes    |
+| 404.html                     | Yes    |
+| 500.html                     | Yes    |
+| base.html                    | Yes    |
+| signup.html                  | Yes    |
+| login.html                   | Yes    |
+| password_change.html         | Yes    |
+| password_reset.html          | Yes    |
 
 **CSS Validator**
 
@@ -592,63 +592,71 @@ The following files were passed through the [W3C CSS Validator](https://jigsaw.w
 
 **JSHint**
 
-The stripe elements JS file used in the checkout app was passed through [JSHint](https://jshint.com/) with no errors.
+The [JSHint](https://jshint.com/) javascript validator was used to check the javascript used within the store. All files below passed with no errors.
 
-![Stripe Elements JSHint Results](docs/jshint/stripelementsjshint.png)
+| File                                       | Pass?  |
+|--------------------------------------------|--------|
+| bag.html (script at the bottom)            | Yes    |
+| stripe_elements.js                         | Yes    |
+| quantity_input_script.html                 | Yes    |
+| add_product.html (script at the bottom)    | Yes    |
+| edit_product.html (script at the bottom)   | Yes    |
+| products.html (script at the bottom)       | Yes    |
+| base.html (script at the bottom)           | Yes    |
 
 **CI Python Linter**
 
 All python files were passed through the [CI Python Linter](https://pep8ci.herokuapp.com/) and all passed with no errors found.
 
-| App                      | File                       | Pass?  |
-|--------------------------|----------------------------|--------|
-| bag > templatetags              | bag_tools                | Yes    |
-| bag              | admin                | Yes    |
-| bag              | apps                | Yes    |
-| bag              | contexts                | Yes    |
-| bag              | models                | Yes    |
-| bag              | urls                | Yes    |
-| bag              | views                | Yes    |
-| checkout              | admin                | Yes    |
-| checkout              | apps                | Yes    |
-| checkout              | forms                | Yes    |
-| checkout              | models                | Yes    |
-| checkout              | signals                | Yes    |
-| checkout              | urls                | Yes    |
-| checkout              | views                | Yes    |
-| checkout              | webhook_handler                | Yes    |
-| checkout              | webhooks                | Yes    |
-| contact              | admin                | Yes    |
-| contact              | apps                | Yes    |
-| contact              | forms                | Yes    |
-| contact              | models                | Yes    |
-| contact              | urls                | Yes    |
-| contact              | views                | Yes    |
-| home              | admin                | Yes    |
-| home              | apps                | Yes    |
-| home              | models                | Yes    |
-| home              | urls                | Yes    |
-| home              | views                | Yes    |
-| in_home              | asgi                | Yes    |
-| in_home              | settings                | Yes    |
-| in_home              | urls                | Yes    |
-| in_home              | wsgi                | Yes    |
-| products > templatetags              | custom_filters                | Yes    |
-| products              | admin                | Yes    |
-| products              | apps                | Yes    |
-| products              | forms                | Yes    |
-| products              | models                | Yes    |
-| products              | urls                | Yes    |
-| products              | views                | Yes    |
-| products              | widgets                | Yes    |
-| profiles              | admin                | Yes    |
-| profiles              | apps                | Yes    |
-| profiles              | forms                | Yes    |
-| profiles              | models                | Yes    |
-| profiles              | urls                | Yes    |
-| profiles              | views                | Yes    |
-| custom_storages              | custom_storages                | Yes    |
-| manage             | manage                | Yes    |
+| App                          | File                  | Pass?  |
+|------------------------------|-----------------------|--------|
+| bag > templatetags           | bag_tools             | Yes    |
+| bag                          | admin                 | Yes    |
+| bag                          | apps                  | Yes    |
+| bag                          | contexts              | Yes    |
+| bag                          | models                | Yes    |
+| bag                          | urls                  | Yes    |
+| bag                          | views                 | Yes    |
+| checkout                     | admin                 | Yes    |
+| checkout                     | apps                  | Yes    |
+| checkout                     | forms                 | Yes    |
+| checkout                     | models                | Yes    |
+| checkout                     | signals               | Yes    |
+| checkout                     | urls                  | Yes    |
+| checkout                     | views                 | Yes    |
+| checkout                     | webhook_handler       | Yes    |
+| checkout                     | webhooks              | Yes    |
+| contact                      | admin                 | Yes    |
+| contact                      | apps                  | Yes    |
+| contact                      | forms                 | Yes    |
+| contact                      | models                | Yes    |
+| contact                      | urls                  | Yes    |
+| contact                      | views                 | Yes    |
+| home                         | admin                 | Yes    |
+| home                         | apps                  | Yes    |
+| home                         | models                | Yes    |
+| home                         | urls                  | Yes    |
+| home                         | views                 | Yes    |
+| in_home                      | asgi                  | Yes    |
+| in_home                      | settings              | Yes    |
+| in_home                      | urls                  | Yes    |
+| in_home                      | wsgi                  | Yes    |
+| products > templatetags      | custom_filters        | Yes    |
+| products                     | admin                 | Yes    |
+| products                     | apps                  | Yes    |
+| products                     | forms                 | Yes    |
+| products                     | models                | Yes    |
+| products                     | urls                  | Yes    |
+| products                     | views                 | Yes    |
+| products                     | widgets               | Yes    |
+| profiles                     | admin                 | Yes    |
+| profiles                     | apps                  | Yes    |
+| profiles                     | forms                 | Yes    |
+| profiles                     | models                | Yes    |
+| profiles                     | urls                  | Yes    |
+| profiles                     | views                 | Yes    |
+| custom_storages              | custom_storages       | Yes    |
+| manage                       | manage                | Yes    |
 
 **WAVE Accessibility Checker**
 

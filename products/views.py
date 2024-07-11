@@ -60,6 +60,11 @@ def all_products(request):
                 products = products.filter(
                     Q(name__icontains=query) | Q(description__icontains=query)
                 )
+            else:
+                messages.error(
+                    request, "You didn't enter any search criteria!"
+                )
+                return redirect(reverse('products'))
 
     current_sorting = f'{sort}_{direction}' if sort and direction else None
 

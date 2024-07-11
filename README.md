@@ -650,6 +650,17 @@ All python files were passed through the [CI Python Linter](https://pep8ci.herok
 | custom_storages              | custom_storages                | Yes    |
 | manage             | manage                | Yes    |
 
+**WAVE Accessibility Checker**
+
+The [WAVE Accessibility Checker](https://wave.webaim.org/) was used on each page of the store to ensure it is accessible as possible. All pages passed with no errors or contrast errors, apart from the following all auth pages provided by the Django framework:
+
+- Login/Sign In
+- Register/Sign Up
+- Change password (when logged in)
+- Reset password (when logged out)
+
+The errors were suggesting that the input fields on these pages did not include corresponding labels. However, on click the WAVE tool points to each potential error within your code and upon inspection, each input field included a matching label. The input fields themselves include a placeholder.
+
 **Lighthouse**
 
 Lighthouse scores were satisfactory, however the orange level of performance was caused by Heroku, Stripe, Bootstrap and a few other sources in which nothing further could be done to improve the scores.

@@ -982,6 +982,11 @@ I found the following bugs during the development process:
   categories = request.GET['category'].split(',')
   ```
 
+- Updating product quantity in shopping bag
+  - Problem: On a mobile view, the user is able to manually remove the quantity within the input field and add letters and special characters. When updating the quantity, the 500 server error page is displayed.
+  - Cause: No proper handling for errors when the quantity is not a number.
+  - Solution: Moved the quantity variable to a try/except block, where the except block displays a more user friendly message to the customer when they attempt to update the quantity using anything other than numbers.
+
 ---
 
 ## **Deployment**

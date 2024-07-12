@@ -214,7 +214,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 - **Quick links**: Quick links are provided for the user so they can quickly access the products they are looking for via the footer.
 - **Contact Us**: The store address, telephone number and email address are displayed on all pages so the user is able to contact the store directly very easily.
-- **Contact Us**: Social media links are displayed for users who wish to follow the store on social media via Facebook, Instagram and/or YouTube.
+- **Social Media Links**: Social media links are displayed for users who wish to follow the store on social media via Facebook, Instagram and/or YouTube.
 
 <br>
 
@@ -234,7 +234,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 
 ![Home hero section](docs/features/other/home-hero-section.png)
 
-- This is the one of the first things the user will see when entering the site. The wording an image help the user to immediately understand the purpose of the website. A shop now button is included so the user can start shopping quickly and easily. This directs them to the all products page.
+- This is one of the first things the user will see when entering the site. The wording and main image help the user to immediately understand the purpose of the website. A shop now button is included so the user can start shopping quickly and easily. This directs them to the all products page.
 
 <br>
 
@@ -1186,6 +1186,12 @@ The following people, websites and learning materials aided me with the creation
 ### **Honourable mentions**
 
 Special thanks to my mentor Richard Wells for his excellent advice and support throughout this project.
+
+### **Content**
+
+The [Django signals documentation](https://docs.djangoproject.com/en/5.0/ref/signals/) really helped me to structure the code for handling updates to product ratings for new review submissions and also deletions.
+
+The [Django custom template tags documenation](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/) aided me to create the custom template filter used in the products app to check if the name of the category is one of the specified values.
 
 ### **Media**
 

@@ -58,8 +58,13 @@ def adjust_bag(request, item_id):
     """
 
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
+
+    try:
+        quantity = int(request.POST.get('quantity'))
+    except ValueError:
+        messages.error(request, "Quantity must be a number between 1-99.")
+        return redirect(reverse('view_bag'))
 
     # Validate quantity
     if quantity > 99:

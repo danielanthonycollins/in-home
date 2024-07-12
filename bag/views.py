@@ -19,9 +19,14 @@ def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
+
+    try:
+        quantity = int(request.POST.get('quantity'))
+    except ValueError:
+        messages.error(request, "Quantity must be a number between 1-99.")
+        return redirect(reverse('view_bag'))
 
     # Validate quantity
     if item_id in list(bag.keys()):

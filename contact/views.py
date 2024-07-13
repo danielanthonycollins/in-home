@@ -31,7 +31,13 @@ def contact(request):
                       'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
             # Render the home page after successful submission
             return render(request, 'home/index.html')
+    else:
+        # Initialize the form with the user's email if they are logged in
+        if request.user.is_authenticated:
+            initial_data = {'email': request.user.email}
+            form = ContactForm(initial=initial_data)
+        else:
+            form = ContactForm()
 
     # Render the contact form if the form is invalid
-    form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})

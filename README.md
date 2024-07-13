@@ -372,7 +372,7 @@ I wanted to choose a font which wasn't mainstream and unique, but also smart and
 ![Contact page](docs/features/other/contact-page.png)
 
 - The contact page is where the user can find multiple ways of contacting the store.
-- **Contact form**: The contact form allows the user a way of submitting a message to the store for a response. It requires a name, email, subject and enquiry message and once submitted, the form is sent to the In Home team's email address so they can assist the customer.
+- **Contact form**: The contact form allows the user a way of submitting a message to the store for a response. It requires a name, email, subject and enquiry message and once submitted, the form is sent to the In Home team's email address so they can assist the customer. If the user is already logged in, their email address is automatically entered for them.
 - **Contact details**: The contact page also features the company contact details, in case the user wishes to contact the store directly.
 
 ## **Future Enhancements**
@@ -526,7 +526,7 @@ DevTools was also used to check the responsiveness at various screen sizes and d
 | Back to login                                        | On click, directs user to login page                                                                                                                   | Yes   |
 | Reset my password                                    | On click, send password reset email to users email                                                                                                     | Yes   |
 | **Contact page**                                         |                                                                                                                                                       |       |
-| Contact form                                         | On submit, if all fields are completed and match validation criteria, user is directed to home page and shown success message. Contact form is sent to In Home email address for a response | Yes   |
+| Contact form                                         | If user is logged in, email is pre-populated. On submit, if all fields are completed and match validation criteria, user is directed to home page and shown success message. Contact form is sent to In Home email address for a response | Yes   |
 | **Add product page (superuser only)**                    |                                                                                                                                                       |       |
 | Select image                                         | On click, opens image select window on users device. When image is selected and confirmed, message appears to user to let them know what the image will be set to. | Yes   |
 | Cancel                                               | On click, direct user to all products page                                                                                                             | Yes   |

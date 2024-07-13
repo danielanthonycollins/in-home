@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.core.mail import send_mail
 from .forms import ContactForm
@@ -31,6 +31,9 @@ def contact(request):
                       'theinhometeam@gmail.com', ['theinhometeam@gmail.com'])
             # Render the home page after successful submission
             return render(request, 'home/index.html')
+        else:
+            messages.error(request, 'Your submission is not valid.')
+            return redirect(reverse('contact'))
     else:
         # Initialize the form with the user's email if they are logged in
         if request.user.is_authenticated:
